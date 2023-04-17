@@ -1,0 +1,242 @@
+$colorgrey:rgb(133, 127, 127);
+.parent{
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  // z-index: 999;
+  background-color: white;
+  // background-color: brown;
+}
+.header {
+  height: 60px;
+  margin: 0 30px;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  // justify-content: space-between;
+  .childheader{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .logo {
+    // margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 180px;
+
+    }
+  }
+
+  .leftSide {
+    // margin-right: auto;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $colorgrey;
+    svg{
+      &:hover{
+        color: black;
+        cursor: pointer;
+      }
+    }
+    .favorite{
+      padding: 0 20px;
+      font-size: 32px;
+      height: fit-content;
+      width: fit-content;
+
+      &:hover{
+        color: black;
+        cursor: pointer;
+      }
+    }
+    .signInText{
+      &:hover{
+        cursor: pointer;
+        color: black;
+
+      }
+    }
+  }
+  .rightSide{
+    display: flex;
+    align-items: center;
+    // margin-left: auto;
+    right: 0;
+
+  }
+  .followbox{
+    font-size: 14px;
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    svg{
+      width: 15px;
+      height: 15px;
+      color: white;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+  }
+  .searchBox{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: $colorgrey;
+    mat-icon{
+      height: 30px;
+      width: 30px;
+      font-size: 28px;
+      margin: 8px;
+      &:hover{
+        cursor: pointer;
+        color: black;
+      }
+    }
+
+  }
+  .socialBox{
+    padding: 5px;
+    background-color: red;
+    margin: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.is-phone-portrait{
+  left: 130px !important;
+  justify-content: flex-start !important;
+  img{
+    width: 130px !important;
+  }
+
+}
+.iconReducer{
+  mat-icon{
+    margin: 0 2px !important;
+    font-size: 18px !important;
+    display: flex;
+    align-items: center;
+  }
+}
+.paddingReducer{
+  margin: 0 5px 0 9px !important;
+  svg{
+    width: 22px;
+    height: 22px;
+  }
+}
+.main-container{
+  min-height: 100vh;
+}
+.drawerContainer{
+  position: fixed;
+  width: 350px;
+  background-color: #333333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+
+  .closebar{
+    color: rgb(212, 206, 206);
+    padding-left: 25px;
+    width: 100%;
+    mat-icon{
+      width: 50px;
+      font-size: 28px;
+      &:hover{
+        color: rgb(138, 137, 137);
+        cursor: pointer;
+      }
+    }
+  }
+  .logoSideNav{
+    width: 80px;
+    background-color: red;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    img{
+      width: 70px;
+    }
+  }
+  .sideNavBtnGrp{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    .sideNavBtn{
+      text-align: center;
+      font: "Renner","sans-serif";
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 17px 0 19px 0;
+      // width: 180px;
+      &:hover{
+        cursor: pointer;
+        color: rgb(253, 59, 59);
+      }
+    }
+  }
+  .followBoxtop{
+    font-family: 'Gerlach Sans';
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 50px;
+  }
+  .followBoxBtm{
+    display: flex;
+    margin-top: 18px;
+    svg{
+      height: 30px;
+      width: 30px;
+      color: red;
+      margin: 0 8px;
+      cursor: pointer;
+    }
+  }
+  .signinbtn{
+    color: white !important;
+    border: 1px solid rgb(187, 186, 186);
+    background-color: transparent;
+    border-radius: 0 !important;
+    margin-top: 30px;
+    width: 140px;
+    height: 50px;
+  }
+
+}
+
+.changeDrawer{
+  width: 16.6875rem !important;
+}
+::ng-deep{
+  .drawerContainer .mat-drawer-inner-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+
+}
+}
+mat-drawer-content{
+  min-height: 100vh;
+}
