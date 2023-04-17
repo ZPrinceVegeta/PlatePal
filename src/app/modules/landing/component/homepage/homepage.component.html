@@ -1,10 +1,13 @@
 <div class="backgroundimageContainer">
-  <div class="searchboxhome">
+  <div class="searchboxhome" [class.tabletPortait]="deviceType=='tablet' && deviceOrientation=='potrait'" [class.handsetLandscape]="deviceType=='handset' && deviceOrientation=='landscape'" [class.handsetPotrait]="deviceType=='handset' && deviceOrientation=='potrait'">
     <div class="heading">
       Find a Recipe
     </div>
-    <div class="searchbox">
-      
+    <div class="searchbox" >
+      <mat-icon>search</mat-icon>
+    </div>
+    <div class="advancedSearch">
+      ADVANCED SEARCH
     </div>
   </div>
 </div>

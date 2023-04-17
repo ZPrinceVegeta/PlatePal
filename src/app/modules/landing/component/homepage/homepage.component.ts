@@ -1,6 +1,9 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ElementRef } from '@angular/core';
+// import {*asColorThief}
+
+
 
 
 @Component({
@@ -13,7 +16,9 @@ export class HomepageComponent implements OnInit{
   container!:HTMLElement
   currentImageIndex=0
   private resizeObserver!: ResizeObserver;
-  private images=['assets/images/bg-home-img3.jpg','assets/images/bg-home-img4.jpg','assets/images/bg-home-img5.jpg','assets/images/home-bg-img1.jpg','assets/images/home-bg-img2.jpg','assets/images/home-bg-img3.jpg']
+  deviceType:string=''
+  deviceOrientation:string=''
+  private images=['assets/images/bg-home-img3.jpg','assets/images/bg-home-img8.jpg','assets/images/bg-home-img5.jpg','assets/images/home-bg-img1.jpg','assets/images/home-bg-img2.jpg','assets/images/home-bg-img3.jpg']
   constructor(private elementRef: ElementRef,private responsive:BreakpointObserver) {
 
     this.images.forEach((imageSrc) => {
@@ -38,17 +43,57 @@ export class HomepageComponent implements OnInit{
       this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
       this.container.style.backgroundImage = `url(${this.images[this.currentImageIndex]})`;
     }, 10000); // Change the image every 10 seconds
+
   }
   findAspectRatio(){
     this.responsive.observe(Breakpoints.Web).subscribe({
       next :(res)=>{
-        console.log(res.matches);
         if(res.matches){
-          // this.container.style.height='800px'
+          this.deviceType='web'
+          this.responsive.observe(Breakpoints.WebLandscape).subscribe({
+            next : (orientation)=>{
+              if(orientation.matches){
+                this.deviceOrientation='landscape'
+              }
+              else{
+                this.deviceOrientation='potrait'
+              }
+            }
+          })
         }
-        else{
-          // this.container.style.height='600px'
-
+      }
+    })
+    this.responsive.observe(Breakpoints.Tablet).subscribe({
+      next :(res)=>{
+        if(res.matches){
+          this.deviceType='tablet'
+          this.responsive.observe(Breakpoints.TabletLandscape).subscribe({
+            next : (orientation)=>{
+              if(orientation.matches){
+                this.deviceOrientation='landscape'
+              }
+              else{
+                this.deviceOrientation='potrait'
+              }
+            }
+          })
+        }
+      }
+    })
+    this.responsive.observe(Breakpoints.Handset).subscribe({
+      next :(res)=>{
+        if(res.matches){
+          this.deviceType='handset'
+          this.responsive.observe(Breakpoints.HandsetLandscape).subscribe({
+            next : (orientation)=>{
+              if(orientation.matches){
+                this.deviceOrientation='landscape'
+              }
+              else{
+                this.deviceOrientation='potrait'
+              }
+            }
+          })
         }
       }
     })
