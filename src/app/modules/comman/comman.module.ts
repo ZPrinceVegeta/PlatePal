@@ -7,12 +7,16 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 const material=[
   MatIconModule,
   MatSidenavModule,
   MatButtonModule,
-  MatDialogModule
+  MatDialogModule,
+  FormsModule,
+  ReactiveFormsModule
 ]
 @NgModule({
   declarations: [

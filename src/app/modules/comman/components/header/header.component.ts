@@ -1,6 +1,7 @@
+import { Subscription } from 'rxjs';
 import { SearchComponentComponent } from '../../../landing/component/search-component/search-component.component';
 import { MatDialog } from '@angular/material/dialog';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 @Component({
@@ -8,12 +9,20 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit, OnDestroy{
   constructor(private responsive:BreakpointObserver, private dialog:MatDialog){}
+  ngOnDestroy() {
+    this.breakpoint1.unsubscribe()
+    this.breakpoint2.unsubscribe()
+
+  }
   isdeviceLandscape:boolean=false;
   isdevicePotrait:boolean=false
+  private breakpoint1:Subscription=new Subscription
+  private breakpoint2:Subscription=new Subscription
+
   ngOnInit(): void {
-    this.responsive.observe([Breakpoints.TabletLandscape,Breakpoints.HandsetLandscape]).subscribe({
+    this.breakpoint1=this.responsive.observe([Breakpoints.TabletLandscape,Breakpoints.HandsetLandscape]).subscribe({
       next: (res:any)=>{
         this.isdeviceLandscape=false
         if(res.matches){
@@ -24,7 +33,7 @@ export class HeaderComponent implements OnInit{
 
       }
     })
-    this.responsive.observe([Breakpoints.TabletPortrait,Breakpoints.HandsetPortrait]).subscribe({
+    this.breakpoint2=this.responsive.observe([Breakpoints.TabletPortrait,Breakpoints.HandsetPortrait]).subscribe({
       next : (res)=>{
         this.isdevicePotrait=false
         if(res.matches){

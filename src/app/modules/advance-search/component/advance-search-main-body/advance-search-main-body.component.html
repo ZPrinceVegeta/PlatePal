@@ -1,0 +1,37 @@
+<div class="body">
+  <div class="header">
+    <div class="headerweb">
+      <span class="logo">
+        <img src="assets/images/logoplatepalwhite.png">
+      </span>
+      <div class="searchboxes">
+        <div class="mealnofilter" *ngIf="!mealInclusionFiler">
+          <mat-icon>search</mat-icon>
+          <input [(ngModel)]="search_text" type="text" placeholder="Find a Recipe">
+          <span (click)="openMealInclusionFilter()" class="incldexcld">INCLUDE/EXCLUDE INGREDIENTS</span>
+        </div>
+        <div *ngIf="mealInclusionFiler" class="mealfilter">
+          <div class="filterbox">
+            <input class="filterboxinp recipesearchbox" type="text" placeholder="Find a Recipe">
+            <mat-icon>search</mat-icon>
+
+          </div>
+          <div class="filterbox">
+            <input class="filterboxinp inclusionBox" type="text" placeholder="Include ingredients">
+            <mat-icon>add_circle_outline</mat-icon>
+
+          </div>
+          <div class="filterbox">
+            <input class="filterboxinp exclusionBox" type="text" placeholder="Exclude ingredients">
+            <mat-icon>remove_circle_outline</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="headertab"></div>
+    <div class="headerhand"></div>
+
+  </div>
+
+
+</div>
