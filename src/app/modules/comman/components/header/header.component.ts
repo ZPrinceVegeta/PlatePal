@@ -1,3 +1,5 @@
+import { SearchComponentComponent } from '../../../landing/component/search-component/search-component.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
@@ -7,7 +9,7 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit{
-  constructor(private responsive:BreakpointObserver){}
+  constructor(private responsive:BreakpointObserver, private dialog:MatDialog){}
   isdeviceLandscape:boolean=false;
   isdevicePotrait:boolean=false
   ngOnInit(): void {
@@ -32,6 +34,9 @@ export class HeaderComponent implements OnInit{
 
       }
     })
+  }
+  openSearch(){
+    this.dialog.open(SearchComponentComponent,{panelClass:"full-screen-dialog"})
   }
 
 }

@@ -6,3 +6,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.full-screen-dialog{
+  max-width: none !important;
+  width: 100% !important;
+  height: 100% !important;
+
+}
+::ng-deep .full-screen-dialog > mat-dialog-container {
+  background-color: var(--background);
+}
+.mdc-dialog__surface {
+  border-radius: var(--mdc-dialog-container-shape, var(--mdc-shape-medium, 4px));
+  background-color: rgb(255,255,255,0.9) !important;
+}

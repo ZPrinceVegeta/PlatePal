@@ -6,11 +6,13 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const material=[
   MatIconModule,
   MatSidenavModule,
-  MatButtonModule
+  MatButtonModule,
+  MatDialogModule
 ]
 @NgModule({
   declarations: [
