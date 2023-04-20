@@ -1,0 +1,28 @@
+<div class="body {{currentScreenSize}}" >
+  <div class="header">
+    <div class="headerweb">
+      <span class="logo">
+        <img src="assets/images/logoplatepalwhite.png">
+      </span>
+      <div class="searchboxes">
+        <div class="mealnofilter">
+          <mat-icon class="searchicon">search</mat-icon>
+          <input [(ngModel)]="search_text" type="text" placeholder="Find a Recipe">
+          <button mat-button (click)="openFilterBar()" class="filterBtnBox"><mat-icon>filter_list</mat-icon>Filter</button>
+          <button mat-button  class="searchBtn">SEARCH</button>
+        </div>
+      </div>
+    </div>
+    <div class="headertab"></div>
+    <div class="headerhand"></div>
+
+  </div>
+  <div *ngIf="mealInclusionFiler" class="filterBox">
+    <div class="filterBtnGrp">
+      <div class="filterBtns" *ngFor="let type of typleList | keyvalue">{{type.key}}</div>
+    </div>
+  </div>
+
+
+
+</div>

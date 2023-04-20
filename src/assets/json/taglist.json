@@ -1,0 +1,546 @@
+{
+  "cuisine": [
+    {
+      "tag_name": "british",
+      "display_name": "British"
+    },
+    {
+      "tag_name": "italian",
+      "display_name": "Italian"
+    },
+    {
+      "tag_name": "mexican",
+      "display_name": "Mexican"
+    },
+    {
+      "tag_name": "middle_eastern",
+      "display_name": "Middle Eastern"
+    },
+    {
+      "tag_name": "dominican",
+      "display_name": "Dominican"
+    },
+    {
+      "tag_name": "puerto_rican",
+      "display_name": "Puerto Rican"
+    },
+    {
+      "tag_name": "soul_food",
+      "display_name": "Soul Food"
+    },
+    {
+      "tag_name": "greek",
+      "display_name": "Greek"
+    },
+    {
+      "tag_name": "indian",
+      "display_name": "Indian"
+    },
+    {
+      "tag_name": "seafood",
+      "display_name": "Seafood"
+    },
+    {
+      "tag_name": "thai",
+      "display_name": "Thai"
+    },
+    {
+      "tag_name": "hawaiian",
+      "display_name": "Hawaiian"
+    },
+    {
+      "tag_name": "ethiopian",
+      "display_name": "Ethiopian"
+    },
+    {
+      "tag_name": "west_african",
+      "display_name": "West African"
+    },
+    {
+      "tag_name": "peruvian",
+      "display_name": "Peruvian"
+    },
+    {
+      "tag_name": "cuban",
+      "display_name": "Cuban"
+    },
+    {
+      "tag_name": "brazilian",
+      "display_name": "Brazilian"
+    },
+    {
+      "tag_name": "taiwanese",
+      "display_name": "Taiwanese"
+    },
+    {
+      "tag_name": "haitian",
+      "display_name": "Haitian"
+    },
+    {
+      "tag_name": "german",
+      "display_name": "German"
+    },
+    {
+      "tag_name": "japanese",
+      "display_name": "Japanese"
+    },
+    {
+      "tag_name": "korean",
+      "display_name": "Korean"
+    },
+    {
+      "tag_name": "african",
+      "display_name": "African"
+    },
+    {
+      "tag_name": "caribbean",
+      "display_name": "Caribbean"
+    },
+    {
+      "tag_name": "filipino",
+      "display_name": "Filipino"
+    },
+    {
+      "tag_name": "south_african",
+      "display_name": "South African"
+    },
+    {
+      "tag_name": "jamaican",
+      "display_name": "Jamaican"
+    },
+    {
+      "tag_name": "american",
+      "display_name": "American"
+    },
+    {
+      "tag_name": "bbq",
+      "display_name": "BBQ"
+    },
+    {
+      "tag_name": "chinese",
+      "display_name": "Chinese"
+    },
+    {
+      "tag_name": "french",
+      "display_name": "French"
+    },
+    {
+      "tag_name": "latin_american",
+      "display_name": "Latin American"
+    },
+    {
+      "tag_name": "vietnamese",
+      "display_name": "Vietnamese"
+    },
+    {
+      "tag_name": "fusion",
+      "display_name": "Fusion"
+    },
+    {
+      "tag_name": "kenyan",
+      "display_name": "Kenyan"
+    },
+    {
+      "tag_name": "swedish",
+      "display_name": "Swedish"
+    },
+    {
+      "tag_name": "persian",
+      "display_name": "Persian"
+    },
+    {
+      "tag_name": "lebanese",
+      "display_name": "Lebanese"
+    },
+    {
+      "tag_name": "indigenous",
+      "display_name": "Indigenous"
+    },
+    {
+      "tag_name": "laotian",
+      "display_name": "Laotian"
+    },
+    {
+      "tag_name": "venezuelan",
+      "display_name": "Venezuelan"
+    }
+  ],
+  "dietary": [
+    {
+      "tag_name": "dairy_free",
+      "display_name": "Dairy-Free"
+    },
+    {
+      "tag_name": "vegan",
+      "display_name": "Vegan"
+    },
+    {
+      "tag_name": "pescatarian",
+      "display_name": "Pescatarian"
+    },
+    {
+      "tag_name": "contains_alcohol",
+      "display_name": "Contains Alcohol"
+    },
+    {
+      "tag_name": "low_carb",
+      "display_name": "Low-Carb"
+    },
+    {
+      "tag_name": "indulgent_sweets",
+      "display_name": "Indulgent Sweets"
+    },
+    {
+      "tag_name": "healthy",
+      "display_name": "Healthy"
+    },
+    {
+      "tag_name": "vegetarian",
+      "display_name": "Vegetarian"
+    },
+    {
+      "tag_name": "comfort_food",
+      "display_name": "Comfort Food"
+    },
+    {
+      "tag_name": "gluten_free",
+      "display_name": "Gluten-Free"
+    },
+    {
+      "tag_name": "kid_friendly",
+      "display_name": "Kid-Friendly"
+    }
+  ],
+  "holiday & season": [
+    {
+      "tag_name": "christmas",
+      "display_name": "Christmas"
+    },
+    {
+      "tag_name": "fourth_of_july",
+      "display_name": "Fourth of July"
+    },
+    {
+      "tag_name": "halloween",
+      "display_name": "Halloween"
+    },
+    {
+      "tag_name": "valentines_day",
+      "display_name": "Valentine's Day"
+    },
+    {
+      "tag_name": "st_patrick_s_day",
+      "display_name": "St. Patrick's Day"
+    },
+    {
+      "tag_name": "cinco_de_mayo",
+      "display_name": "Cinco de Mayo"
+    },
+    {
+      "tag_name": "black_history_month",
+      "display_name": "Black History Month"
+    },
+    {
+      "tag_name": "pride_month",
+      "display_name": "Pride Month"
+    },
+    {
+      "tag_name": "latinx_heritage_month",
+      "display_name": "Latinx Heritage Month"
+    },
+    {
+      "tag_name": "easter",
+      "display_name": "Easter"
+    },
+    {
+      "tag_name": "asian_pacific_american_heritage_month",
+      "display_name": "Asian Pacific American Heritage Month"
+    },
+    {
+      "tag_name": "mothers_day",
+      "display_name": "Mother's Day"
+    },
+    {
+      "tag_name": "thanksgiving",
+      "display_name": "Thanksgiving"
+    },
+    {
+      "tag_name": "lunar_new_year",
+      "display_name": "Lunar New Year"
+    },
+    {
+      "tag_name": "passover",
+      "display_name": "Passover"
+    },
+    {
+      "tag_name": "spring",
+      "display_name": "Spring"
+    },
+    {
+      "tag_name": "fall",
+      "display_name": "Fall"
+    },
+    {
+      "tag_name": "summer",
+      "display_name": "Summer"
+    },
+    {
+      "tag_name": "winter",
+      "display_name": "Winter"
+    }
+  ],
+  "meal": [
+    {
+      "tag_name": "appetizers",
+      "display_name": "Appetizers"
+    },
+    {
+      "tag_name": "snacks",
+      "display_name": "Snacks"
+    },
+    {
+      "tag_name": "breakfast",
+      "display_name": "Breakfast"
+    },
+    {
+      "tag_name": "drinks",
+      "display_name": "Drinks"
+    },
+    {
+      "tag_name": "lunch",
+      "display_name": "Lunch"
+    },
+    {
+      "tag_name": "sides",
+      "display_name": "Sides"
+    },
+    {
+      "tag_name": "desserts",
+      "display_name": "Desserts"
+    },
+    {
+      "tag_name": "dinner",
+      "display_name": "Dinner"
+    },
+    {
+      "tag_name": "bakery_goods",
+      "display_name": "Bakery Goods"
+    }
+  ],
+  "tools & technique": [
+    {
+      "tag_name": "grill",
+      "display_name": "Grill"
+    },
+    {
+      "tag_name": "deep_fry",
+      "display_name": "Deep-Fry"
+    },
+    {
+      "tag_name": "pan_fry",
+      "display_name": "Pan Fry"
+    },
+    {
+      "tag_name": "bake",
+      "display_name": "Bake"
+    },
+    {
+      "tag_name": "steam",
+      "display_name": "Steam"
+    },
+    {
+      "tag_name": "broiler",
+      "display_name": "Broiler"
+    },
+    {
+      "tag_name": "food_processor",
+      "display_name": "Food Processor"
+    },
+    {
+      "tag_name": "pressure_cooker",
+      "display_name": "Pressure Cooker"
+    },
+    {
+      "tag_name": "blender",
+      "display_name": "Blender"
+    },
+    {
+      "tag_name": "oven",
+      "display_name": "Oven"
+    },
+    {
+      "tag_name": "hand_mixer",
+      "display_name": "Hand Mixer"
+    },
+    {
+      "tag_name": "slow_cooker",
+      "display_name": "Slow Cooker"
+    },
+    {
+      "tag_name": "freezer",
+      "display_name": "Freezer"
+    },
+    {
+      "tag_name": "microwave",
+      "display_name": "Microwave"
+    },
+    {
+      "tag_name": "stove_top",
+      "display_name": "Stove Top"
+    },
+    {
+      "tag_name": "wok",
+      "display_name": "Wok"
+    },
+    {
+      "tag_name": "instant_pot",
+      "display_name": "Instant Pot"
+    },
+    {
+      "tag_name": "air_fryer",
+      "display_name": "Air Fryer"
+    },
+    {
+      "tag_name": "cast_iron_pan",
+      "display_name": "Cast Iron Pan"
+    },
+    {
+      "tag_name": "dutch_oven",
+      "display_name": "Dutch Oven"
+    }
+  ],
+  "appliance": [
+    {
+      "tag_name": "broiler",
+      "display_name": "Broiler"
+    },
+    {
+      "tag_name": "food_processor",
+      "display_name": "Food Processor"
+    },
+    {
+      "tag_name": "pressure_cooker",
+      "display_name": "Pressure Cooker"
+    },
+    {
+      "tag_name": "blender",
+      "display_name": "Blender"
+    },
+    {
+      "tag_name": "oven",
+      "display_name": "Oven"
+    },
+    {
+      "tag_name": "hand_mixer",
+      "display_name": "Hand Mixer"
+    },
+    {
+      "tag_name": "slow_cooker",
+      "display_name": "Slow Cooker"
+    },
+    {
+      "tag_name": "freezer",
+      "display_name": "Freezer"
+    },
+    {
+      "tag_name": "microwave",
+      "display_name": "Microwave"
+    },
+    {
+      "tag_name": "stove_top",
+      "display_name": "Stove Top"
+    },
+    {
+      "tag_name": "wok",
+      "display_name": "Wok"
+    },
+    {
+      "tag_name": "instant_pot",
+      "display_name": "Instant Pot"
+    },
+    {
+      "tag_name": "air_fryer",
+      "display_name": "Air Fryer"
+    },
+    {
+      "tag_name": "cast_iron_pan",
+      "display_name": "Cast Iron Pan"
+    },
+    {
+      "tag_name": "dutch_oven",
+      "display_name": "Dutch Oven"
+    }
+  ],
+  "dish style": [
+    {
+      "tag_name": "mashup",
+      "display_name": "Mashup"
+    },
+    {
+      "tag_name": "stuffed",
+      "display_name": "Stuffed"
+    },
+    {
+      "tag_name": "big_batch",
+      "display_name": "Big Batch"
+    },
+    {
+      "tag_name": "meal_prep",
+      "display_name": "Meal Prep"
+    },
+    {
+      "tag_name": "one_pot_or_pan",
+      "display_name": "One-Pot or Pan"
+    },
+    {
+      "tag_name": "no_bake_desserts",
+      "display_name": "No Bake Desserts"
+    }
+  ],
+  "popular": [
+    {
+      "tag_name": "5_ingredients_or_less",
+      "display_name": "5 Ingredients or Less"
+    },
+    {
+      "tag_name": "easy",
+      "display_name": "Easy"
+    },
+    {
+      "tag_name": "under_30_minutes",
+      "display_name": "Under 30 Minutes"
+    },
+    {
+      "tag_name": "special_occasion",
+      "display_name": "Special Occasion"
+    },
+    {
+      "tag_name": "happy_hour",
+      "display_name": "Happy Hour"
+    },
+    {
+      "tag_name": "casual_party",
+      "display_name": "Casual Party"
+    },
+    {
+      "tag_name": "bbq",
+      "display_name": "BBQ"
+    },
+    {
+      "tag_name": "date_night",
+      "display_name": "Date Night"
+    },
+    {
+      "tag_name": "weeknight",
+      "display_name": "Weeknight"
+    },
+    {
+      "tag_name": "brunch",
+      "display_name": "Brunch"
+    },
+    {
+      "tag_name": "game_day",
+      "display_name": "Game Day"
+    }
+  ]
+}
