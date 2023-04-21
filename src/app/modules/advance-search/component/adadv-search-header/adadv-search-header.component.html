@@ -9,6 +9,7 @@
           <mat-icon class="searchicon">search</mat-icon>
           <input [(ngModel)]="search_text" type="text" placeholder="Find a Recipe">
           <button mat-button (click)="openFilterBar()" class="filterBtnBox"><mat-icon>filter_list</mat-icon>Filter</button>
+          <button *ngIf="tagData.length > 0" class="filterNotification" mat-mini-fab color="primary">{{tagData.length}}</button>
           <button mat-button  class="searchBtn">SEARCH</button>
         </div>
       </div>
@@ -19,7 +20,33 @@
   </div>
   <div *ngIf="mealInclusionFiler" class="filterBox">
     <div class="filterBtnGrp">
-      <div class="filterBtns" *ngFor="let type of typleList | keyvalue">{{type.key}}</div>
+      <div class="filterBtns" *ngFor="let type of typleList?.food_type">{{type.type}}</div>
+    </div>
+  </div>
+  <div *ngIf="isfilterdialogOpen()" class="filterBoxDialog">
+    <div  class="dialogContent">
+      <div class="headerDialog">
+        <h3>refine filter</h3>
+        <mat-icon (click)="openFilterBar()">close</mat-icon>
+      </div>
+      <div class="filterOptionRepeatBox" *ngFor="let type of typleList?.food_type , let index=index">
+        <h3 class="filterheadingname">{{type?.type}}</h3>
+        <ng-container *ngIf="!type?.is_expand_open">
+          <div class="filter-item" *ngFor="let i of type?.type_list.slice(0,6)">
+            <mat-checkbox (change)="checkBoxPush($event,i)" checked={{checkIfChecked(i)}}  class="checkbox" color="primary">{{i.display_name}}</mat-checkbox>
+          </div>
+          <button *ngIf="type?.type_list.length > 6" mat-button class="expandclickbtn" (click)="filterListExpandClose(type)">More filter</button>
+
+        </ng-container>
+
+        <ng-container *ngIf=" type?.is_expand_open">
+          <div class="filter-item"  *ngFor="let i of type?.type_list">
+            <mat-checkbox class="checkbox" color="primary">{{i.display_name}}</mat-checkbox>
+          </div>
+          <button *ngIf="type?.type_list.length > 6" mat-button class="expandclickbtn" (click)="filterListExpandClose(type)">Less  filter</button>
+        </ng-container>
+
+      </div>
     </div>
   </div>
 

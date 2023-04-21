@@ -8,6 +8,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { KeypipePipe } from './pipe/keypipe.pipe';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 const material=[
@@ -16,11 +19,13 @@ const material=[
   MatButtonModule,
   MatDialogModule,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  MatCheckboxModule
 ]
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    KeypipePipe
   ],
   imports: [
     CommonModule,
@@ -29,6 +34,9 @@ const material=[
   ],
   exports: [
     material,
-    HeaderComponent]
+    HeaderComponent,
+    KeypipePipe
+
+  ]
 })
 export class CommanModuleModule { }
