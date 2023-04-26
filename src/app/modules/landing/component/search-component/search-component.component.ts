@@ -1,6 +1,8 @@
-import { Subscription } from 'rxjs';
+import { Subscription, Subject, takeUntil } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Pipe } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-search-component',
@@ -8,14 +10,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./search-component.component.scss']
 })
 export class SearchComponentComponent implements OnInit,OnDestroy{
-  responsiveTopBar:Boolean=false
-  private breakpoint:Subscription= new Subscription
-  constructor(private responsive:BreakpointObserver){}
+  responsiveTopBar:Boolean=false;
+  searchQuery:string = ''
+  destroyed = new Subject<void>();
+  constructor(private responsive:BreakpointObserver,private router:Router,private dialogRef:MatDialogRef<SearchComponentComponent>){}
   ngOnDestroy(): void {
-    this.breakpoint.unsubscribe()
+    this.destroyed.next()
+    this.destroyed.complete()
   }
   ngOnInit() {
-    this.breakpoint=this.responsive.observe([Breakpoints.TabletPortrait,Breakpoints.Handset]).subscribe({
+    this.responsive.observe([Breakpoints.TabletPortrait,Breakpoints.Handset]).pipe(takeUntil(this.destroyed)).subscribe({
       next : (res)=>{
         this.responsiveTopBar=false
         console.log(res.breakpoints,res.matches);
@@ -25,6 +29,14 @@ export class SearchComponentComponent implements OnInit,OnDestroy{
       }
     }
     )
+
+  }
+  SearchFood(){
+    this.dialogRef.close()
+    if(this.searchQuery){
+      this.router.navigate(['/search',{q:this.searchQuery}])
+
+    }
   }
 
 }

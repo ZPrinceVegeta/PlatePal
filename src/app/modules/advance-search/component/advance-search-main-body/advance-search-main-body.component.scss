@@ -1,11 +1,36 @@
 .header{
-  position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9000;
+  position: sticky;
 }
 .body{
   width: 100%;
+  font-family: "Renner",sans-serif;;
   display: flex;
   flex-direction: column;
-  width: 100px;
+  min-height: 100vh;
+  background-color: #181818;
+  color: white;
+  .matching_info{
+    margin: 40px 20px 30px 90px;
+    font-size: 18px;
+    font-weight: 600;
+    span{
+      text-transform: italics;
+    }
+  }
+  .cardContainer{
+    display: flex;
+    gap: 30px;
+
+    // justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 90px;
+    .wrapper{
+      // height: 518px;
+      width: calc(33.33% - 30px);
+      margin-bottom: 50px;
+    }
+  }
 }

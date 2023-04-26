@@ -1,0 +1,31 @@
+<div #recipeCard id="recipeCard" class="card" [class.detailsExpanded]="passedData.is_quick_view_opened">
+  <div class="thumbNail" [style.background-image]="'url(' + passedData?.thumbnail_url + ')'">
+    <img class="thumb_nail_img" [src]="passedData?.thumbnail_url">
+  </div>
+  <div class="recipe_details">
+    <div class="author">
+      <div class="left">Recipe</div>
+      <div *ngIf="passedData?.credits[0].name" class="right"> From {{passedData?.credits[0].name}}</div>
+      <div *ngIf="!passedData?.credits[0].name" class="right">By Anonymous</div>
+    </div>
+    <div class="recipeName">
+      {{passedData.name | titlecase}}
+    </div>
+    <div class="timer">
+      <mat-icon>timer</mat-icon> {{passedData?.cook_time_minutes}} mins
+    </div>
+  </div>
+  <div class="card_hover_background">
+
+  </div>
+  <div class="btnGrp">
+    <button class="quick_view_btn" (click)="openQuickView(passedData.id)" mat-button>quick view</button>
+    <div class="compare_view"><mat-icon>add_circle_outline</mat-icon>compare recipe</div>
+  </div>
+  <div #expandedRecipe id="expandedRecipe" class="details_expanded">
+    <div class="leftSide"></div>
+    <div class="rightSide"></div>
+  </div>
+
+</div>
+

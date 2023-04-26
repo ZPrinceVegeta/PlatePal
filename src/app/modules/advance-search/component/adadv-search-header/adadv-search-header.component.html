@@ -1,4 +1,4 @@
-<div class="body {{currentScreenSize}}" >
+<div class="body {{currentScreenSize}}">
   <div class="header">
     <div class="headerweb">
       <span class="logo">
@@ -8,9 +8,11 @@
         <div class="mealnofilter">
           <mat-icon class="searchicon">search</mat-icon>
           <input [(ngModel)]="search_text" type="text" placeholder="Find a Recipe">
-          <button mat-button (click)="openFilterBar()" class="filterBtnBox"><mat-icon>filter_list</mat-icon>Filter</button>
-          <button *ngIf="tagData.length > 0" class="filterNotification" mat-mini-fab color="primary">{{tagData.length}}</button>
-          <button mat-button  class="searchBtn">SEARCH</button>
+          <button mat-button (click)="openFilterBar()"
+            class="filterBtnBox"><mat-icon>filter_list</mat-icon>Filter</button>
+          <button disabled="true" *ngIf="tagData.length > 0" class="filterNotification" mat-mini-fab
+            color="primary">{{tagData.length}}</button>
+          <button mat-button class="searchBtn">SEARCH</button>
         </div>
       </div>
     </div>
@@ -18,38 +20,98 @@
     <div class="headerhand"></div>
 
   </div>
-  <div *ngIf="mealInclusionFiler" class="filterBox">
+  <div *ngIf="tagData.length > 0" class="selectedFilterShow">
+    <div class="miniBoxStruct">
+      <div class="miniBox" *ngFor="let i of tagData , let index=index">
+        {{i.display_name}}<mat-icon (click)="deleteFilterItem(index)">close</mat-icon>
+      </div>
+      <span (click)="clearAll()" class="clear_all">Clear all</span>
+    </div>
+  </div>
+  <div class="filterBox">
     <div class="filterBtnGrp">
-      <div class="filterBtns" *ngFor="let type of typleList?.food_type">{{type.type}}</div>
+      <div class="filterBtns"  *ngFor="let type of typleList?.food_type, let index = index">
+        <div (click)="filterDropDownSelectedGroup = type?.type_list">
+           {{type.type}}<mat-icon>arrow_drop_down</mat-icon>
+
+        </div>
+        <div class="dropdown dropdownindex{{index}}">
+          <div class="filtered_item" *ngFor="let item of type?.type_list.slice(0,8)">
+            <mat-checkbox (change)="checkBoxPush($event,item)" checked={{checkIfChecked(item)}} class="checkbox"
+              color="primary">{{item?.display_name}}</mat-checkbox>
+
+          </div>
+          <div *ngIf="type?.type_list.length > 6" class="morefilterBtn">
+            <button (click)="openMoreFilterDialog(type?.type_list)" mat-button>More Filters</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div *ngIf="isfilterdialogOpen()" class="filterBoxDialog">
-    <div  class="dialogContent">
+    <div class="dialogContent">
       <div class="headerDialog">
         <h3>refine filter</h3>
         <mat-icon (click)="openFilterBar()">close</mat-icon>
+      </div>
+      <div *ngIf="tagData.length > 0" class="filterOptionRepeatBox">
+        <h3 class="filterheadingname">My Selected Filters</h3>
+        <ng-container *ngIf="true">
+          <div class="miniBoxSelected" *ngFor="let i of tagData , let index=index">
+            {{i.display_name}}<mat-icon (click)="deleteFilterItem(index)">close</mat-icon>
+          </div>
+          <button (click)="clearAll()" mat-button class="expandclickbtn">Clear all</button>
+
+        </ng-container>
+        <!-- <ng-container>
+          <div class="miniBox" *ngFor="let i of tagData , let index=index">
+            {{i.display_name}}<mat-icon (click)="deleteFilterItem(index)">close</mat-icon>
+        </div>
+          <button *ngIf="tagData.length > 6" mat-button class="expandclickbtn">More filter</button>
+
+        </ng-container> -->
+
+
+
       </div>
       <div class="filterOptionRepeatBox" *ngFor="let type of typleList?.food_type , let index=index">
         <h3 class="filterheadingname">{{type?.type}}</h3>
         <ng-container *ngIf="!type?.is_expand_open">
           <div class="filter-item" *ngFor="let i of type?.type_list.slice(0,6)">
-            <mat-checkbox (change)="checkBoxPush($event,i)" checked={{checkIfChecked(i)}}  class="checkbox" color="primary">{{i.display_name}}</mat-checkbox>
+            <mat-checkbox (change)="checkBoxPush($event,i)" checked={{checkIfChecked(i)}} class="checkbox"
+              color="primary">{{i.display_name}}</mat-checkbox>
           </div>
-          <button *ngIf="type?.type_list.length > 6" mat-button class="expandclickbtn" (click)="filterListExpandClose(type)">More filter</button>
+          <button *ngIf="type?.type_list.length > 6" mat-button class="expandclickbtn"
+            (click)="filterListExpandClose(type)">More filter</button>
 
         </ng-container>
 
         <ng-container *ngIf=" type?.is_expand_open">
-          <div class="filter-item"  *ngFor="let i of type?.type_list">
-            <mat-checkbox class="checkbox" color="primary">{{i.display_name}}</mat-checkbox>
+          <div class="filter-item" *ngFor="let i of type?.type_list">
+            <mat-checkbox (change)="checkBoxPush($event,i)" checked={{checkIfChecked(i)}} class="checkbox"
+              color="primary">{{i.display_name}}</mat-checkbox>
+
           </div>
-          <button *ngIf="type?.type_list.length > 6" mat-button class="expandclickbtn" (click)="filterListExpandClose(type)">Less  filter</button>
+          <button *ngIf="type?.type_list.length > 6" mat-button class="expandclickbtn"
+            (click)="filterListExpandClose(type)">Less filter</button>
         </ng-container>
 
       </div>
     </div>
   </div>
+  <div *ngIf="is_expand_filter_open" class="dropExpsndFullScreen">
+    <div class="filter_box">
+      <div class="filter_list">
+        <div class="checkboxitem" *ngFor="let i of filterDropDownSelectedGroup">
+          <mat-checkbox (change)="checkBoxPushWhileExpand($event,i)" checked="{{checkIfCheckedExpand(i)}}" color="primary" >{{i?.display_name}}</mat-checkbox>
 
+        </div>
+      </div>
+      <div class="btn_grp">
+        <button (click)="applyFilter()"  class="applyBtn" mat-button>APPLY</button>
+        <button (click)="closeExpandDialog()" class="clsBtn" mat-button>CLOSE</button>
 
-
+      </div>
+    </div>
+  </div>
 </div>

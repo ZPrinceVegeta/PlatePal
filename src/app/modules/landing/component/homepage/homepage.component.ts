@@ -3,7 +3,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ElementRef } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Subject, takeUntil } from 'rxjs';
 // import {*asColorThief}
 
 @Component({
@@ -16,16 +16,8 @@ export class HomepageComponent implements OnInit, OnDestroy{
   container!: HTMLElement;
   currentImageIndex = 0;
   private resizeObserver!: ResizeObserver;
-  private breakPointSubWeb!:Subscription
-  private breakPointSubWebLandscape!:Subscription
-  private breakPointSubTab!:Subscription
-  private breakPointSubTabLandscape!:Subscription
-
-  private breakPointSubMob!:Subscription
-  private breakPointSubMobLandscape!:Subscription
-
-
-
+  //
+  destroyed = new Subject<void>();
   deviceType: string = '';
   deviceOrientation: string = '';
   // private images=['assets/images/bg-home-img3.jpg','assets/images/bg-home-img8.jpg','assets/images/bg-home-img5.jpg','assets/images/home-bg-img1.jpg','assets/images/home-bg-img2.jpg','assets/images/home-bg-img3.jpg']
@@ -41,12 +33,8 @@ export class HomepageComponent implements OnInit, OnDestroy{
     });
   }
   ngOnDestroy() {
-    this.breakPointSubMob.unsubscribe()
-    this.breakPointSubMobLandscape.unsubscribe()
-    this.breakPointSubTab.unsubscribe()
-    this.breakPointSubTabLandscape.unsubscribe()
-    this.breakPointSubWeb.unsubscribe()
-    this.breakPointSubWebLandscape.unsubscribe()
+    this.destroyed.next()
+    this.destroyed.complete()
     this.resizeObserver.disconnect()
   }
 
@@ -70,11 +58,11 @@ export class HomepageComponent implements OnInit, OnDestroy{
     // }, 10000); // Change the image every 10 seconds
   }
   findAspectRatio() {
-    this.breakPointSubWeb=this.responsive.observe(Breakpoints.Web).subscribe({
+    this.responsive.observe(Breakpoints.Web).pipe(takeUntil(this.destroyed)).subscribe({
       next: (res) => {
         if (res.matches) {
           this.deviceType = 'web';
-          this.breakPointSubWebLandscape=this.responsive.observe(Breakpoints.WebLandscape).subscribe({
+         this.responsive.observe(Breakpoints.WebLandscape).pipe(takeUntil(this.destroyed)).subscribe({
             next: (orientation) => {
               if (orientation.matches) {
                 this.deviceOrientation = 'landscape';
@@ -86,11 +74,11 @@ export class HomepageComponent implements OnInit, OnDestroy{
         }
       },
     });
-    this.breakPointSubTab=this.responsive.observe(Breakpoints.Tablet).subscribe({
+    this.responsive.observe(Breakpoints.Tablet).pipe(takeUntil(this.destroyed)).subscribe({
       next: (res) => {
         if (res.matches) {
           this.deviceType = 'tablet';
-          this.breakPointSubTabLandscape=this.responsive.observe(Breakpoints.TabletLandscape).subscribe({
+          this.responsive.observe(Breakpoints.TabletLandscape).pipe(takeUntil(this.destroyed)).subscribe({
             next: (orientation) => {
               if (orientation.matches) {
                 this.deviceOrientation = 'landscape';
@@ -102,11 +90,11 @@ export class HomepageComponent implements OnInit, OnDestroy{
         }
       },
     });
-    this.responsive.observe(Breakpoints.Handset).subscribe({
+    this.responsive.observe(Breakpoints.Handset).pipe(takeUntil(this.destroyed)).subscribe({
       next: (res) => {
         if (res.matches) {
           this.deviceType = 'handset';
-          this.breakPointSubMobLandscape=this.responsive.observe(Breakpoints.HandsetLandscape).subscribe({
+        this.responsive.observe(Breakpoints.HandsetLandscape).pipe(takeUntil(this.destroyed)).subscribe({
             next: (orientation) => {
               if (orientation.matches) {
                 this.deviceOrientation = 'landscape';

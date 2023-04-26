@@ -1,0 +1,165 @@
+.card {
+  width: 100%;
+  height: 518px;
+  background-color: transparent;
+
+  .thumbNail {
+    height: 65%;
+    // background-color: red;
+    background-color: black;
+    width: 100%;
+    background-size: 1000%;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+
+    .thumb_nail_img {
+      object-fit: scale-down;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .recipe_details {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 0 30px;
+
+    .author {
+      display: flex;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bolder;
+      height: 20%;
+
+      .left {
+        color: #f93f23;
+        margin-right: 20px;
+        align-self: center;
+
+      }
+      .right{
+        color: black;
+        font-size: 17px;
+        padding-left: 20px;
+        border-left: 3px solid black;
+        align-self: center;
+      }
+    }
+    .recipeName{
+      padding-top: 12px;
+      font-size: 24px;
+      line-height: 26px;
+      font-weight: bolder;
+    }
+    .timer{
+      bottom: 1px;
+      right: 1px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      margin: 10px 30px;
+      font-size: 19px;
+      font-weight: bolder;
+      mat-icon{
+        color: #f93f23;
+        height: 35px;
+        width: 35px;
+        font-size: 32px;
+      }
+    }
+  }
+  &:hover{
+    cursor: pointer;
+    .recipeName{
+      text-decoration: underline;
+    }
+    .card_hover_background{
+      visibility: visible;
+    }
+    .btnGrp{
+      visibility: visible;
+    }
+  }
+  .card_hover_background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    visibility: hidden;
+    opacity: 0.5;
+    border: 5px solid green;
+    z-index: 100;
+
+
+  }
+  .btnGrp{
+    z-index: 200;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    .quick_view_btn{
+      background-color: #f93f23;
+      height: 60px;
+      border-radius: 0;
+      color: rgb(255,255,255,0.9);
+      text-transform: uppercase;
+      width: 100%;
+      padding: 0px 30px;
+      font-size: 16px;
+
+    }
+    .compare_view{
+      margin-top: 20px;
+      text-transform: uppercase;
+      color: rgb(228, 207, 207);
+      font-size: 16px;
+      text-align: center;
+      font-weight: bolder;
+      display: flex;
+      align-items: center;
+      mat-icon{
+        margin-right: 15px;
+      }
+
+
+    }
+  }
+  .details_expanded{
+  visibility: hidden;
+
+  }
+}
+.detailsExpanded{
+  margin-bottom: 569px ;
+  transition: margin-bottom 0.2s linear;
+
+  .details_expanded{
+    visibility: visible;
+    position: absolute;
+    bottom: calc(-100% - 100px);
+    width: calc(100vw - 15px);
+    height: 569px;
+    background-color: rgb(54,54,54);
+    padding: 90px 90px 10px 90px;
+    display: flex;
+    margin-bottom: 30px;
+    transition: all 1s ;
+    .leftSide{
+      width: 50%;
+      background-color: #f93f23;
+      height: 100%;
+    }
+    .rightSide{
+      width: 50%;
+      height: 100%;
+      background-color: aqua;
+    }
+  }
+}

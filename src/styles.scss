@@ -21,3 +21,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: var(--mdc-dialog-container-shape, var(--mdc-shape-medium, 4px));
   background-color: rgb(255,255,255,0.9) !important;
 }
+.mat-mdc-checkbox label {
+  font-family: "Renner", sans-serif;
+  font-size: 16px;
+}

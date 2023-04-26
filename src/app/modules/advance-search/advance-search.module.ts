@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { AdvanceSearchRoutingModule } from './advance-search-routing.module';
 import { AdvanceSearchMainBodyComponent } from './component/advance-search-main-body/advance-search-main-body.component';
 import { AdadvSearchHeaderComponent } from './component/adadv-search-header/adadv-search-header.component';
+import { CardRecipeComponent } from './component/card-recipe/card-recipe.component';
 
 @NgModule({
   declarations: [
     AdvanceSearchMainBodyComponent,
     AdadvSearchHeaderComponent,
+    CardRecipeComponent,
   ],
   imports: [
     CommonModule,
