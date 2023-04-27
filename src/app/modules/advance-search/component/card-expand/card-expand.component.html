@@ -1,0 +1,16 @@
+<div #expandedRecipe id="expandedRecipe" class="details_expanded">
+  <div class="leftSide" >
+    <img class="expand_thumb" [src]="passedData?.thumbnail_url" alt="">
+
+  </div>
+  <div class="rightSide">
+    <div class="up_section">
+      <h1 class="recipeHeeading">
+        {{passedData.name | titlecase}}
+      </h1>
+      <h3 class="rating">{{calculateRating(passedData.user_ratings)}}</h3>
+    </div>
+
+
+  </div>
+</div>

@@ -9,6 +9,7 @@ export class CardRecipeComponent implements OnInit, AfterViewInit {
   @Input() passedData: any;
   @Output() switchQuickFlag:EventEmitter<any>=new EventEmitter()
   leftPosition!:number
+  croppedImage: any = '';
   constructor(private elementref: ElementRef) {}
   ngAfterViewInit(): void {
     const myElement=this.elementref.nativeElement.querySelector('#recipeCard')
@@ -26,6 +27,18 @@ export class CardRecipeComponent implements OnInit, AfterViewInit {
     this.is_details_expand=true
     const element=this.elementref.nativeElement.querySelector('#expandedRecipe')
     element.style.left=`-${this.leftPosition}px`
+
+  }
+  calculateRating(rating:any){
+
+    if(rating){
+      const user_rating=Math.round(rating.score * 4) + 1;
+      return `${user_rating}/5`
+    }
+    else{
+      return '1/5'
+    }
+
 
   }
 }

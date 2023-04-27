@@ -20,7 +20,7 @@ const material=[
   MatDialogModule,
   FormsModule,
   ReactiveFormsModule,
-  MatCheckboxModule
+  MatCheckboxModule,
 ]
 @NgModule({
   declarations: [

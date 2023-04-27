@@ -22,10 +22,21 @@
     <button class="quick_view_btn" (click)="openQuickView(passedData.id)" mat-button>quick view</button>
     <div class="compare_view"><mat-icon>add_circle_outline</mat-icon>compare recipe</div>
   </div>
-  <div #expandedRecipe id="expandedRecipe" class="details_expanded">
-    <div class="leftSide"></div>
-    <div class="rightSide"></div>
-  </div>
+  <!-- <div #expandedRecipe id="expandedRecipe" class="details_expanded">
+    <div class="leftSide" >
+      <img class="expand_thumb" [src]="passedData?.thumbnail_url" alt="">
+
+    </div>
+    <div class="rightSide">
+      <div class="up_section">
+        <h1 class="recipeHeeading">
+          {{passedData.name | titlecase}}
+        </h1>
+        <h3 class="rating">{{calculateRating(passedData.user_ratings)}}</h3>
+      </div>
+
+
+    </div>
+  </div> -->
 
 </div>
-

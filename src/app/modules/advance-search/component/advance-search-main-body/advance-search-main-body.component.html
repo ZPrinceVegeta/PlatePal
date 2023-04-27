@@ -1,15 +1,18 @@
-
 <div class="body {{currentScreenSize}}">
   <div class="header">
     <app-adadv-search-header></app-adadv-search-header>
   </div>
   <div *ngIf="recipeData" class="matching_info">
-    {{recipeData?.count}}  matching result for "<i>{{recipeData?.query}}</i>"
+    {{recipeData?.count}} matching result for "<i>{{recipeData?.query}}</i>"
   </div>
   <div class="cardContainer">
     <div class="wrapper" *ngFor="let recipe of recipeData?.results">
-      <app-card-recipe [passedData]="recipe" (switchQuickFlag)="changeQuickFlag($event)"></app-card-recipe>
+      <div class="recipe_card"  [class.diaplay_expand]="recipe?.is_quick_view_opened">
+        <app-card-recipe [passedData]="recipe" (switchQuickFlag)="changeQuickFlag($event)"></app-card-recipe>
+      </div>
+      <div class="expand_card"  [class.open]="recipe?.is_quick_view_opened" >
+        <app-card-expand *ngIf="recipe?.is_quick_view_opened" [passedData]="recipe"></app-card-expand>
+      </div>
     </div>
   </div>
 </div>
-

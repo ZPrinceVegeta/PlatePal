@@ -1,19 +1,21 @@
 .card {
   width: 100%;
-  height: 518px;
+  aspect-ratio: 161/191;
   background-color: transparent;
+  // transition: margin-bottom 0.3s ;
+  z-index: 10 ;
 
   .thumbNail {
     height: 65%;
     // background-color: red;
     background-color: black;
     width: 100%;
-    background-size: 1000%;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(10px);
+
 
     .thumb_nail_img {
-      object-fit: scale-down;
+      // object-fit: scale-down;
+      object-fit: cover;
+
       height: 100%;
       width: 100%;
     }
@@ -42,7 +44,8 @@
         align-self: center;
 
       }
-      .right{
+
+      .right {
         color: black;
         font-size: 17px;
         padding-left: 20px;
@@ -50,13 +53,15 @@
         align-self: center;
       }
     }
-    .recipeName{
+
+    .recipeName {
       padding-top: 12px;
       font-size: 24px;
       line-height: 26px;
       font-weight: bolder;
     }
-    .timer{
+
+    .timer {
       bottom: 1px;
       right: 1px;
       position: absolute;
@@ -65,7 +70,8 @@
       margin: 10px 30px;
       font-size: 19px;
       font-weight: bolder;
-      mat-icon{
+
+      mat-icon {
         color: #f93f23;
         height: 35px;
         width: 35px;
@@ -73,19 +79,24 @@
       }
     }
   }
-  &:hover{
+
+  &:hover {
     cursor: pointer;
-    .recipeName{
+
+    .recipeName {
       text-decoration: underline;
     }
-    .card_hover_background{
+
+    .card_hover_background {
       visibility: visible;
     }
-    .btnGrp{
+
+    .btnGrp {
       visibility: visible;
     }
   }
-  .card_hover_background{
+
+  .card_hover_background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -97,25 +108,28 @@
 
 
   }
-  .btnGrp{
+
+  .btnGrp {
     z-index: 200;
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     visibility: hidden;
-    .quick_view_btn{
+
+    .quick_view_btn {
       background-color: #f93f23;
       height: 60px;
       border-radius: 0;
-      color: rgb(255,255,255,0.9);
+      color: rgb(255, 255, 255, 0.9);
       text-transform: uppercase;
       width: 100%;
       padding: 0px 30px;
       font-size: 16px;
 
     }
-    .compare_view{
+
+    .compare_view {
       margin-top: 20px;
       text-transform: uppercase;
       color: rgb(228, 207, 207);
@@ -124,42 +138,75 @@
       font-weight: bolder;
       display: flex;
       align-items: center;
-      mat-icon{
+
+      mat-icon {
         margin-right: 15px;
       }
 
 
     }
   }
-  .details_expanded{
-  visibility: hidden;
+
+  .details_expanded {
+    display: none;
 
   }
 }
-.detailsExpanded{
-  margin-bottom: 569px ;
-  transition: margin-bottom 0.2s linear;
 
-  .details_expanded{
-    visibility: visible;
+.detailsExpanded {
+  // margin-bottom: 669px;
+
+
+  .details_expanded {
+    // display: block !important;
     position: absolute;
-    bottom: calc(-100% - 100px);
+    bottom: calc(-100% - 200px);
     width: calc(100vw - 15px);
-    height: 569px;
-    background-color: rgb(54,54,54);
-    padding: 90px 90px 10px 90px;
-    display: flex;
+    // height: 569px;
+    background-color: rgb(54, 54, 54);
+    padding: 90px 30px 10px 90px;
+    display: flex !important;
     margin-bottom: 30px;
-    transition: all 1s ;
-    .leftSide{
+
+    .leftSide {
       width: 50%;
-      background-color: #f93f23;
-      height: 100%;
+      height: 489px;
+
+      position: relative;
+      overflow: hidden;
+
+      .expand_thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+      }
     }
-    .rightSide{
+
+    .rightSide {
       width: 50%;
       height: 100%;
-      background-color: aqua;
+      display: flex;
+      flex-direction: column;
+      padding-left: 80px;
+      .up_section{
+        font:"Source Serif Pro" , serif;
+
+        .recipeHeeading{
+          color: white;
+          font-size: 48px;
+          line-height: 54px;
+          font-weight: bolder;
+        }
+        .rating{
+          color:#b4b4b4;
+          font-size: 38px;
+          font-weight: bolder;
+
+        }
+
+      }
+
     }
   }
 }

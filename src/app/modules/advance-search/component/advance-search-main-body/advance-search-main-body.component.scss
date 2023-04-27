@@ -9,6 +9,7 @@
   font-family: "Renner",sans-serif;;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   background-color: #181818;
   color: white;
@@ -22,15 +23,42 @@
   }
   .cardContainer{
     display: flex;
-    gap: 30px;
-
-    // justify-content: space-between;
+    // gap: 45px;
     flex-wrap: wrap;
-    padding: 0 90px;
+    // padding: 0 90px;
+
+    @media only screen and (min-width: 1372px) {
+      width: 1372px;
+    }
     .wrapper{
-      // height: 518px;
       width: calc(33.33% - 30px);
+      margin: 0 15px;
       margin-bottom: 50px;
+      .recipe_card{
+        transition: margin-bottom 0.3s;
+        transform-origin: bottom;
+
+
+      }
+      .expand_card{
+        position: absolute;
+
+        transition: margin-top 0.3s;
+        &.open{
+          width: 100vw;
+          left: 0;
+          margin-top: -569px;
+          height: 569px;
+
+          // display: block !important;
+          // visibility: visible !important;
+        }
+        // transition: height 0.3s, margin-top 0.3s, transform-origin 0.3s;
+      }
+      .diaplay_expand{
+        margin-bottom: 669px !important;
+
+      }
     }
   }
 }
