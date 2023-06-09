@@ -1,5 +1,5 @@
 <div class="body {{currentScreenSize}}">
-  <div class="header">
+  <div #header class="header">
     <div class="headerweb">
       <span class="logo">
         <img src="assets/images/logoplatepalwhite.png">
@@ -7,12 +7,12 @@
       <div class="searchboxes">
         <div class="mealnofilter">
           <mat-icon class="searchicon">search</mat-icon>
-          <input [(ngModel)]="search_text" type="text" placeholder="Find a Recipe">
+          <input [(ngModel)]="search_text" type="text" (keyup.enter)="searchRecipe()" placeholder="Find a Recipe">
           <button mat-button (click)="openFilterBar()"
             class="filterBtnBox"><mat-icon>filter_list</mat-icon>Filter</button>
           <button disabled="true" *ngIf="tagData.length > 0" class="filterNotification" mat-mini-fab
             color="primary">{{tagData.length}}</button>
-          <button mat-button class="searchBtn">SEARCH</button>
+          <button mat-button class="searchBtn" (click)="searchRecipe()">SEARCH</button>
         </div>
       </div>
     </div>
@@ -20,12 +20,12 @@
     <div class="headerhand"></div>
 
   </div>
-  <div *ngIf="tagData.length > 0" class="selectedFilterShow">
+  <div #selectedFilterShow  class="selectedFilterShow">
     <div class="miniBoxStruct">
       <div class="miniBox" *ngFor="let i of tagData , let index=index">
         {{i.display_name}}<mat-icon (click)="deleteFilterItem(index)">close</mat-icon>
       </div>
-      <span (click)="clearAll()" class="clear_all">Clear all</span>
+      <span *ngIf="tagData.length > 0" (click)="clearAll()" class="clear_all">Clear all</span>
     </div>
   </div>
   <div class="filterBox">
@@ -99,7 +99,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="is_expand_filter_open" class="dropExpsndFullScreen">
+  <div *ngIf="is_expand_filter_open" class="dropExpsndFullScreen" [ngStyle]="{height:header_height}">
     <div class="filter_box">
       <div class="filter_list">
         <div class="checkboxitem" *ngFor="let i of filterDropDownSelectedGroup">

@@ -1,9 +1,11 @@
 .backgroundimageContainer{
   width: 100%;
+  // min-height: calc(100vh - 60px);
   transition: background-image 1s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .heading{
   font-size: 58px;
@@ -86,4 +88,9 @@
   .advancedSearch{
     font-size: 11px;
   }
+}
+.randomContent{
+  width: 100%;
+  height: 400px;
+  background-color: red;
 }

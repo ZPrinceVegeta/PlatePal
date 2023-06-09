@@ -1,18 +1,16 @@
 .details_expanded {
-  // display: block !important;
-  // position: absolute;
+  position: relative;
   width: 100%;
   left: 0;
-  // height: 569px;
-  // transition: height 0.3s, margin-top 0.3s;
   background-color: rgb(54, 54, 54);
   padding: 90px 30px 10px 90px;
   display: flex !important;
   margin-bottom: 30px;
+  font-family: "Renner", sans-serif;
 
   .leftSide {
     width: 50%;
-    height: 489px;
+    height: 389px;
 
     position: relative;
     overflow: hidden;
@@ -31,23 +29,134 @@
     display: flex;
     flex-direction: column;
     padding-left: 80px;
-    .up_section{
-      font:"Source Serif Pro" , serif;
 
-      .recipeHeeading{
+    .up_section {
+      font: "Source Serif Pro", serif;
+
+      .recipeHeeading {
         color: white;
         font-size: 48px;
         line-height: 54px;
         font-weight: bolder;
       }
-      .rating{
-        color:#b4b4b4;
+
+      .rating {
+        color: #f93f23;
         font-size: 38px;
         font-weight: bolder;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #666;
+        margin: none !important;
 
       }
 
     }
 
+    .down_section {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      // height: 235px;
+      // background-color: #f93f23;
+
+      .ingredient {
+        width: 47%;
+        // height: 100%;
+        // background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        overflow: hidden;
+
+        ul {
+          position: relative;
+          padding-left: 0;
+          list-style: none;
+          height: 10.4375rem;
+          overflow: hidden;
+
+          li {
+            list-style-type: disc;
+            list-style-position: inside;
+          }
+        }
+
+        ul::after {
+          background: linear-gradient(to bottom, rgba(54, 54, 54, 0) 0%, #363636 100%);
+          bottom: 0;
+          content: "";
+          height: 100%;
+          position: absolute;
+          width: 100%;
+
+        }
+      }
+
+      .method {
+        width: 47%;
+        height: 100%;
+
+        .instructionContent {
+          height: 10.4375rem;
+          overflow: hidden;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      .title {
+        font-size: 24px;
+        text-transform: uppercase;
+      }
+    }
+
+    .btnSection {
+      font-size: 12px;
+      display: flex;
+      height: 40px;
+
+      // background-color: #f93f23;
+      .viewRecipeBtn {
+        font-size: 12px;
+        width: 160px;
+        height: 100%;
+        background-color: #f93f23;
+        border-radius: 0;
+        color: white;
+        text-transform: uppercase;
+        margin-right: 25px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .bookMark {
+        font-size: 12px;
+        width: 160px;
+        height: 100%;
+        background-color: #f93f23;
+        border-radius: 0;
+        color: white;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 26px;
+    right: 50px;
+    mat-icon{
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+      cursor: pointer;
+    }
   }
 }

@@ -51,5 +51,10 @@ export class AdvanceSearchMainBodyComponent implements OnInit,OnDestroy{
 
 
   }
+  closeExpand(){
+    this.recipeData.results.forEach((element:any) => {
+      element.is_quick_view_opened=false
+    });
+  }
 
 }

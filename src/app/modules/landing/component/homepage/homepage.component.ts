@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit, OnDestroy{
   container!: HTMLElement;
   currentImageIndex = 0;
   private resizeObserver!: ResizeObserver;
-  //
+
   destroyed = new Subject<void>();
   deviceType: string = '';
   deviceOrientation: string = '';
@@ -26,11 +26,12 @@ export class HomepageComponent implements OnInit, OnDestroy{
     private elementRef: ElementRef,
     private responsive: BreakpointObserver,
     private dialog: MatDialog
-  ) {
-    this.images.forEach((imageSrc) => {
-      const image = new Image();
-      image.src = imageSrc;
-    });
+  )
+   {
+    // this.images.forEach((imageSrc) => {
+    //   const image = new Image();
+    //   image.src = imageSrc;
+    // });
   }
   ngOnDestroy() {
     this.destroyed.next()
@@ -48,15 +49,8 @@ export class HomepageComponent implements OnInit, OnDestroy{
     this.container.style.backgroundSize = '100% auto';
     this.container.style.backgroundRepeat = 'no-repeat';
     this.findAspectRatio();
-    this.switchBgImage();
   }
-  switchBgImage() {
-    // setInterval(() => {
-    //   // Change the background image to the next image in the array
-    //   this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-    //   this.container.style.backgroundImage = `url(${this.images[this.currentImageIndex]})`;
-    // }, 10000); // Change the image every 10 seconds
-  }
+
   findAspectRatio() {
     this.responsive.observe(Breakpoints.Web).pipe(takeUntil(this.destroyed)).subscribe({
       next: (res) => {

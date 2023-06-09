@@ -1,4 +1,15 @@
-import { Component, Input, OnInit, ElementRef, ViewChild, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
+import { BreakpointresponsiveService } from './../../../comman/service/breakpointresponsive.service';
+import {
+  Component,
+  Input,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
   selector: 'app-card-recipe',
@@ -7,38 +18,49 @@ import { Component, Input, OnInit, ElementRef, ViewChild, AfterViewInit, Output,
 })
 export class CardRecipeComponent implements OnInit, AfterViewInit {
   @Input() passedData: any;
-  @Output() switchQuickFlag:EventEmitter<any>=new EventEmitter()
-  leftPosition!:number
+  @Output() switchQuickFlag: EventEmitter<any> = new EventEmitter();
+  destroyed = new Subject<void>();
+  currentScreen: string = '';
+  leftPosition!: number;
   croppedImage: any = '';
-  constructor(private elementref: ElementRef) {}
+
+  constructor(
+    private elementref: ElementRef,
+    private responsive: BreakpointresponsiveService
+  ) {}
   ngAfterViewInit(): void {
-    const myElement=this.elementref.nativeElement.querySelector('#recipeCard')
+    const myElement =
+      this.elementref.nativeElement.querySelector('#recipeCard');
     this.leftPosition = myElement.offsetLeft;
 
     // console.log('Left position:', leftPosition);
   }
-  is_details_expand: Boolean = false
+  is_details_expand: Boolean = false;
   ngOnInit(): void {
     this.is_details_expand = false;
+    this.responsive.currentScreenSize$
+      .pipe(takeUntil(this.destroyed))
+      .subscribe({
+        next: (res) => {
+          this.currentScreen=res
+        },
+      });
   }
   thumbNail!: HTMLElement;
-  openQuickView(id:number){
-    this.switchQuickFlag.emit(id)
-    this.is_details_expand=true
-    const element=this.elementref.nativeElement.querySelector('#expandedRecipe')
-    element.style.left=`-${this.leftPosition}px`
-
+  openQuickView(event: MouseEvent, id: number) {
+    event.stopPropagation();
+    this.switchQuickFlag.emit(id);
+    this.is_details_expand = true;
   }
-  calculateRating(rating:any){
-
-    if(rating){
-      const user_rating=Math.round(rating.score * 4) + 1;
-      return `${user_rating}/5`
+  calculateRating(rating: any) {
+    if (rating) {
+      const user_rating = Math.round(rating.score * 4) + 1;
+      return `${user_rating}/5`;
+    } else {
+      return '1/5';
     }
-    else{
-      return '1/5'
-    }
-
-
+  }
+  viewRecipe() {
+    console.log(1);
   }
 }

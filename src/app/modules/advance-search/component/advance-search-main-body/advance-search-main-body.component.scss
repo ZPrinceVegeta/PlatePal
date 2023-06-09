@@ -6,11 +6,11 @@
 }
 .body{
   width: 100%;
+  min-height: 100vh;
   font-family: "Renner",sans-serif;;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   background-color: #181818;
   color: white;
   .matching_info{
@@ -23,10 +23,7 @@
   }
   .cardContainer{
     display: flex;
-    // gap: 45px;
     flex-wrap: wrap;
-    // padding: 0 90px;
-
     @media only screen and (min-width: 1372px) {
       width: 1372px;
     }
@@ -37,28 +34,74 @@
       .recipe_card{
         transition: margin-bottom 0.3s;
         transform-origin: bottom;
-
-
+         position: relative;
+         .pointerTriangle{
+          width: 50px;
+          height: 50px;
+          background-color:  rgb(54, 54, 54);
+          position: absolute;
+          left: 50%;
+          // top: 120px;
+          bottom: -80px;
+          transform: translate(-50%,-50%);
+          rotate: -45deg;
+         }
       }
       .expand_card{
         position: absolute;
-
+        display: flex;
+        justify-content: center;
+        transition: height 0.3s;
         transition: margin-top 0.3s;
         &.open{
-          width: 100vw;
           left: 0;
-          margin-top: -569px;
-          height: 569px;
-
-          // display: block !important;
-          // visibility: visible !important;
+          right: 0;
+          margin-top: -613px;
         }
-        // transition: height 0.3s, margin-top 0.3s, transform-origin 0.3s;
-      }
-      .diaplay_expand{
-        margin-bottom: 669px !important;
+        background-color:  rgb(54, 54, 54);
 
       }
+      .display_expand{
+        margin-bottom: 664px !important;
+      }
+
+    @media only screen and (min-width: 1372px) {
+      app-card-expand{
+        width: 1372px;
+      }
+    }
+    }
+  }
+}
+.Medium {
+  .cardContainer{
+    justify-content: center !important;
+    .wrapper{
+      width: calc(50% - 130px) !important;
+    }
+  }
+}
+.Small{
+  .cardContainer{
+    align-items: center !important;
+    width:  100% !important;
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    .wrapper{
+      width: calc(100% - 50px) !important;
+      margin-bottom: 30px;
+    }
+  }
+}
+.XSmall{
+  .cardContainer{
+    align-items: center !important;
+    width:  100% !important;
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    .wrapper{
+      width: calc(100% - 20px) !important;
+      margin-bottom: 30px;
     }
   }
 }

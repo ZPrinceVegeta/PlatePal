@@ -8,9 +8,33 @@
       <h1 class="recipeHeeading">
         {{passedData.name | titlecase}}
       </h1>
-      <h3 class="rating">{{calculateRating(passedData.user_ratings)}}</h3>
+      <section class="rating">{{calculateRating(passedData.user_ratings)}}</section>
+    </div>
+    <div class="down_section">
+      <section class="ingredient" *ngIf="passedData?.sections">
+        <h3 class="title">{{passedData?.sections[0]?.components.length}} ingredients</h3>
+        <ul>
+          <li *ngFor="let i of passedData?.sections[0]?.components">{{i.raw_text}}34</li>
+        </ul>
+      </section>
+      <section class="method">
+        <h3 class="title">preparation</h3>
+        <div class="instructionContent">
+        <span *ngFor="let i of passedData?.instructions">{{i.display_text}}</span>
+        </div>
+      </section>
+    </div>
+    <div class="btnSection">
+      <button class="viewRecipeBtn" mat-button>View Recipe page</button>
+      <button mat-button  class="bookMark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+      </svg> save recipe</button>
     </div>
 
 
+  </div>
+  <div class="closeBtn">
+    <mat-icon (click)="closeExpand()">close</mat-icon>
   </div>
 </div>

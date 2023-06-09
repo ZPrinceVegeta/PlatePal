@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card-expand',
@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CardExpandComponent {
   @Input() passedData:any
+  @Output() closeEmit = new EventEmitter()
   calculateRating(rating:any){
 
     if(rating){
@@ -16,7 +17,8 @@ export class CardExpandComponent {
     else{
       return '1/5'
     }
-
-
+  }
+  closeExpand(){
+    this.closeEmit.emit()
   }
 }

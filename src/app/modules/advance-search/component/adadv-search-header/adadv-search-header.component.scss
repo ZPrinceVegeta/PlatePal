@@ -319,9 +319,9 @@
 .dropExpsndFullScreen{
   z-index: 99999;
   position: absolute;
-  padding-top: 30px;
+  padding: 30px 0;
   width: 100%;
-  height: calc(100vh - 140px);
+  // height: calc(100vh - 140px);
   top: 100%;
   display: flex;
   justify-content: center;
@@ -335,13 +335,12 @@
       display: flex;
       flex-flow: column wrap;
       .checkboxitem{
-        width: 17.625rem;
-        margin: 8px 0 8px 12px;
+        // width: 17.625rem;
+        margin: 8px 42px 8px 12px;
         // font-family: "Renner",sans-serif !important;
       }
     }
     .btn_grp{
-      // font-weight: 600;
       .applyBtn{
         border-radius: 0;
         background-color: #333;
@@ -511,10 +510,4 @@
       }
     }
   }
-}
-::ng-deep{
-  .mat-mdc-checkbox label {
-    // font-size: 17px;
-    // font-weight: 400;
-}
 }
