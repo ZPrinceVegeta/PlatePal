@@ -3,7 +3,7 @@ import { BreakpointresponsiveService } from './../../../comman/service/breakpoin
 import { AdvncSearchService } from './../../service/advnc-search.service';
 import { SearchComponentComponent } from './../../../landing/component/search-component/search-component.component';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-advance-search-main-body',
@@ -13,8 +13,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class AdvanceSearchMainBodyComponent implements OnInit,OnDestroy{
   currentScreenSize:string=''
   destroyed = new Subject<void>()
-  recipeData:any
-  constructor(private searchService:AdvncSearchService,private responsiveService:BreakpointresponsiveService){
+  recipeData:any;
+  @ViewChild('cardContainer') cardContainer!: ElementRef;
+  constructor(private searchService:AdvncSearchService,private responsiveService:BreakpointresponsiveService , private renderer : Renderer2){
     // dialogRef.close()
   }
   ngOnDestroy(): void {
@@ -44,12 +45,24 @@ export class AdvanceSearchMainBodyComponent implements OnInit,OnDestroy{
     const objectToModify = this.recipeData.results.find((obj:any) => obj.id == id)
     if(objectToModify){
       objectToModify.is_quick_view_opened=true
+
+      setTimeout(() => {
+        this.scrollToOpenElement();
+      } , 200);
     }
 
-
-
-
-
+  }
+  scrollToOpenElement() {
+    if (this.cardContainer) {
+      const wrapperElements = this.cardContainer.nativeElement.querySelectorAll('.wrapper');
+      wrapperElements.forEach((wrapperElement : any) => {
+        const openElement = wrapperElement.querySelector('.open');
+        if (openElement) {
+          
+          openElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+        }
+      });
+    }
   }
   closeExpand(){
     this.recipeData.results.forEach((element:any) => {

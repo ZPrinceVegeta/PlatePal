@@ -1,0 +1,1462 @@
+{
+  "data": {
+      "analyticsInfo": {
+          "author": "Napoleon",
+          "author_id": "",
+          "content_id": "8657",
+          "content_name": "grilled-bang-bang-shrimp-burger-with-asian-brussels-sprouts",
+          "context_page_id": 8657,
+          "context_page_type": "recipe",
+          "count": "",
+          "description": "",
+          "e2e_test": "",
+          "has_video": true,
+          "is_community": false,
+          "page": "recipe",
+          "page_edition": "en-us",
+          "referrer": "",
+          "text": "",
+          "title": "Grilled Bang Bang Shrimp Burger With Asian Brussels Sprouts"
+      },
+      "canonicalUrl": "https://tasty.co",
+      "id": 8657,
+      "maxAge": 86400,
+      "pagePath": "/recipe/grilled-bang-bang-shrimp-burger-with-asian-brussels-sprouts",
+      "pageType": "recipe",
+      "primaryTagBreadcrumbPath": [
+          {
+              "display_name": "Meal",
+              "id": 9295813,
+              "name": "meal"
+          },
+          {
+              "display_name": "Dinner",
+              "id": 64486,
+              "name": "dinner"
+          },
+          {
+              "display_name": "Burgers",
+              "id": 9299520,
+              "name": "burgers"
+          }
+      ],
+      "recipe": {
+          "approved_at": 1682631936,
+          "aspect_ratio": "1:1",
+          "beauty_url": null,
+          "brand_id": 104,
+          "buzz_id": null,
+          "compilation_child": {
+              "status": false
+          },
+          "country": "US",
+          "created_at": 1682546943,
+          "credits": {
+              "byline": "Napoleon",
+              "id": 104,
+              "names": [
+                  "Napoleon"
+              ],
+              "role": null,
+              "slug": "napoleon",
+              "thumbnail_url": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/e7a4591c395d4c419eb08b49482b9abc.jpeg",
+              "type": "brand"
+          },
+          "description": "",
+          "featured_in": null,
+          "id": 8657,
+          "ingredient_sections": [
+              {
+                  "ingredients": [
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "120"
+                          },
+                          "name": "Japanese mayo",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "½"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "60"
+                          },
+                          "name": "sweet thai chili sauce",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "¼"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "Sriracha",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "2"
+                          }
+                      }
+                  ],
+                  "name": "Bang Bang Sauce"
+              },
+              {
+                  "ingredients": [
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "200"
+                          },
+                          "name": "finely shredded green cabbage",
+                          "primary_unit": {
+                              "display": "cups",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "50"
+                          },
+                          "name": "finely shredded carrots",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "⅓"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "50"
+                          },
+                          "name": "thinly sliced red onion",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "⅓"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "roughly chopped fresh cilantro",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "50"
+                          },
+                          "name": "shredded scallions",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "⅓"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "mL",
+                              "quantity": "80"
+                          },
+                          "name": "rice vinegar",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "⅓"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "sesame oil",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "soy sauce",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "sugar",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "ground ginger",
+                          "primary_unit": {
+                              "display": "teaspoon",
+                              "quantity": "1"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "garlic powder",
+                          "primary_unit": {
+                              "display": "teaspoon",
+                              "quantity": "½"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "red pepper flakes",
+                          "primary_unit": {
+                              "display": "teaspoon",
+                              "quantity": "½"
+                          }
+                      },
+                      {
+                          "extra_comment": "to taste",
+                          "metric_unit": null,
+                          "name": "kosher salt",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": null
+                          }
+                      }
+                  ],
+                  "name": "Slaw"
+              },
+              {
+                  "ingredients": [
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "mL",
+                              "quantity": "60"
+                          },
+                          "name": "rice vinegar",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "¼"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "mL",
+                              "quantity": "60"
+                          },
+                          "name": "sesame oil",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "¼"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "mL",
+                              "quantity": "60"
+                          },
+                          "name": "soy sauce",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "¼"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "165"
+                          },
+                          "name": "honey",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "½"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "garlic chili sauce",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "ends trimmed, halved",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "425"
+                          },
+                          "name": "brussels sprouts",
+                          "primary_unit": {
+                              "display": "lb",
+                              "quantity": "1"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "olive oil",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "to taste",
+                          "metric_unit": null,
+                          "name": "kosher salt",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": null
+                          }
+                      },
+                      {
+                          "extra_comment": "for garnish",
+                          "metric_unit": null,
+                          "name": "sesame seed",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": null
+                          }
+                      },
+                      {
+                          "extra_comment": "thinly sliced, for garnish",
+                          "metric_unit": null,
+                          "name": "scallion",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": null
+                          }
+                      }
+                  ],
+                  "name": "Asian Brussels Sprouts"
+              },
+              {
+                  "ingredients": [
+                      {
+                          "extra_comment": "peeled and deveined, divided",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "650"
+                          },
+                          "name": "raw shrimp",
+                          "primary_unit": {
+                              "display": "lb",
+                              "quantity": "1 ½"
+                          }
+                      },
+                      {
+                          "extra_comment": "melted",
+                          "metric_unit": null,
+                          "name": "unsalted butter",
+                          "primary_unit": {
+                              "display": "tablespoons",
+                              "quantity": "3"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "large egg",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": "1"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "85"
+                          },
+                          "name": "panko bread crumbs",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "¾"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "35"
+                          },
+                          "name": "thinly sliced scallions",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "¼"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "10"
+                          },
+                          "name": "finely chopped fresh parsley",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "¼"
+                          }
+                      },
+                      {
+                          "extra_comment": "minced",
+                          "metric_unit": null,
+                          "name": "garlic cloves",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": "3"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "grated fresh ginger",
+                          "primary_unit": {
+                              "display": "tablespoon",
+                              "quantity": "1"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": " sriracha",
+                          "primary_unit": {
+                              "display": "teaspoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "garlic chili sauce",
+                          "primary_unit": {
+                              "display": "teaspoon",
+                              "quantity": "1"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": null,
+                          "name": "soy sauce",
+                          "primary_unit": {
+                              "display": "teaspoons",
+                              "quantity": "2"
+                          }
+                      },
+                      {
+                          "extra_comment": "",
+                          "metric_unit": {
+                              "display": "g",
+                              "quantity": "60"
+                          },
+                          "name": "cornstarch",
+                          "primary_unit": {
+                              "display": "cup",
+                              "quantity": "½"
+                          }
+                      },
+                      {
+                          "extra_comment": "for greasing",
+                          "metric_unit": null,
+                          "name": "neutral oil",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": null
+                          }
+                      },
+                      {
+                          "extra_comment": "lightly toasted",
+                          "metric_unit": null,
+                          "name": "brioche  buns",
+                          "primary_unit": {
+                              "display": null,
+                              "quantity": "6"
+                          }
+                      }
+                  ],
+                  "name": "Shrimp Burgers"
+              }
+          ],
+          "inspired_by": null,
+          "instructions": [
+              {
+                  "display_text": "Make the bang bang sauce: In a small bowl, stir together the Japanese mayo, sweet Thai chili sauce, and Sriracha until smooth. Cover and refrigerate until ready to use."
+              },
+              {
+                  "display_text": "Make the slaw: In a large bowl, toss together the cabbage, carrots, red onion, cilantro, scallions, rice vinegar, sesame oil, soy sauce, sugar, ground ginger, garlic powder, red pepper flakes, and salt until combined. Cover and refrigerate until ready to use."
+              },
+              {
+                  "display_text": "Prep the Brussels sprouts: In a small saucepan, whisk together the rice vinegar, sesame oil, soy sauce, honey, and garlic chili sauce, and simmer on low heat for 10 minutes until thickened and mixture reaches a syrup consistency."
+              },
+              {
+                  "display_text": "In a large bowl, toss the Brussels sprouts with the olive oil and salt. Set aside until ready to cook."
+              },
+              {
+                  "display_text": "Make the shrimp burgers: Line 2 baking sheets with parchment paper."
+              },
+              {
+                  "display_text": "In a food processor, combine 1 pound of shrimp, the melted butter, and egg. Process until smooth, about 4 minutes. Transfer the shrimp mixture to a large bowl."
+              },
+              {
+                  "display_text": "Roughly chop the remaining ½ pound of shrimp, then add to the bowl with the ground shrimp mixture."
+              },
+              {
+                  "display_text": "Add the panko, scallions, parsley, garlic, ginger, Sriracha, garlic chili sauce, soy sauce, and cornstarch to the bowl with the shrimp. Mix until evenly combined. Roll the mixture into 6 4-ounce balls, then flatten into ½-inch-thick patties and place on a prepared baking sheet."
+              },
+              {
+                  "display_text": "Preheat the grill to 400°F (200°C). Grease the grill grates with neutral oil."
+              },
+              {
+                  "display_text": "Add the Brussels sprouts to a rotisserie basket on the grill and place the shrimp patties directly on the grill grates. Close the grill lid and cook the patties for 1½ minutes on each side, or until the shrimp is pink and the tops of the burgers are golden brown. Remove from the grill and place on the clean prepared baking sheet. Cook the Brussels sprouts for 12 minutes, or until golden brown and crispy on the outside. Return the Brussels sprouts to the bowl and toss with the simmered glaze. Garnish with sesame seeds and scallions."
+              },
+              {
+                  "display_text": "Assemble the burgers: Spread some of the bang bang sauce onto the toasted brioche buns, then place a shrimp burger on each bottom bun and top with some of the slaw. Finish with the top buns."
+              },
+              {
+                  "display_text": "Serve the shrimp burgers immediately with the Brussels sprouts alongside."
+              },
+              {
+                  "display_text": "Enjoy!"
+              }
+          ],
+          "is_app_only": false,
+          "is_community": false,
+          "is_licensed_video": false,
+          "is_shoppable": false,
+          "is_sponsored_recipe": false,
+          "keywords": "",
+          "language": "eng",
+          "linked_recipes": [],
+          "name": "Grilled Bang Bang Shrimp Burger With Asian Brussels Sprouts",
+          "non_video_recipe": {
+              "status": false
+          },
+          "num_servings": 6,
+          "nutrition": {
+              "calories": 947,
+              "carbohydrates": 79,
+              "fat": 58,
+              "fiber": 5,
+              "protein": 29,
+              "sugar": 27,
+              "updated_at": "2023-08-11T08:01:41+02:00"
+          },
+          "ratings": {
+              "count_negative": 1,
+              "count_positive": 13,
+              "count_total": 14,
+              "score": 93
+          },
+          "recirc_feeds": {
+              "ease": [],
+              "meal": []
+          },
+          "seo_path": "9295813,64486,9299520",
+          "seo_tags": [
+              {
+                  "name": "recipeCategory",
+                  "value": "Meal"
+              },
+              {
+                  "name": "recipeCuisine",
+                  "value": "Asian"
+              }
+          ],
+          "seo_title": "",
+          "servings_text": "servings",
+          "show": {
+              "id": 17,
+              "name": "Tasty"
+          },
+          "show_id": 17,
+          "slug": "grilled-bang-bang-shrimp-burger-with-asian-brussels-sprouts",
+          "tags": [
+              {
+                  "display_name": "Burgers",
+                  "id": 9299520,
+                  "name": "burgers",
+                  "root_tag_type": "meal",
+                  "type": "dinner"
+              },
+              {
+                  "display_name": "Asian",
+                  "id": 9295873,
+                  "name": "asian",
+                  "root_tag_type": "cuisine",
+                  "type": "cuisine"
+              },
+              {
+                  "display_name": "Meal",
+                  "id": 9295813,
+                  "name": "meal",
+                  "root_tag_type": "meal",
+                  "type": "meal"
+              },
+              {
+                  "display_name": "High-Fiber",
+                  "id": 8091920,
+                  "name": "high_fiber",
+                  "root_tag_type": "healthy",
+                  "type": "healthy"
+              },
+              {
+                  "display_name": "High-Protein",
+                  "id": 8091917,
+                  "name": "high_protein",
+                  "root_tag_type": "healthy",
+                  "type": "healthy"
+              },
+              {
+                  "display_name": "Under 1 Hour",
+                  "id": 8091748,
+                  "name": "under_1_hour",
+                  "root_tag_type": "difficulty",
+                  "type": "difficulty"
+              },
+              {
+                  "display_name": "Under 45 Minutes",
+                  "id": 8091747,
+                  "name": "under_45_minutes",
+                  "root_tag_type": "difficulty",
+                  "type": "difficulty"
+              },
+              {
+                  "display_name": "Pescatarian",
+                  "id": 3801552,
+                  "name": "pescatarian",
+                  "root_tag_type": "dietary",
+                  "type": "dietary"
+              },
+              {
+                  "display_name": "Special Occasion",
+                  "id": 188967,
+                  "name": "special_occasion",
+                  "root_tag_type": "seasonal",
+                  "type": "occasion"
+              },
+              {
+                  "display_name": "One-Pot or Pan",
+                  "id": 65855,
+                  "name": "one_pot_or_pan",
+                  "root_tag_type": "cooking_style",
+                  "type": "cooking_style"
+              },
+              {
+                  "display_name": "Summer",
+                  "id": 64510,
+                  "name": "summer",
+                  "root_tag_type": "seasonal",
+                  "type": "seasonal"
+              },
+              {
+                  "display_name": "BBQ",
+                  "id": 64504,
+                  "name": "bbq",
+                  "root_tag_type": "seasonal",
+                  "type": "occasion"
+              },
+              {
+                  "display_name": "Grill",
+                  "id": 64494,
+                  "name": "grill",
+                  "root_tag_type": "cooking_style",
+                  "type": "cooking_style"
+              },
+              {
+                  "display_name": "Lunch",
+                  "id": 64489,
+                  "name": "lunch",
+                  "root_tag_type": "meal",
+                  "type": "meal"
+              },
+              {
+                  "display_name": "Dinner",
+                  "id": 64486,
+                  "name": "dinner",
+                  "root_tag_type": "meal",
+                  "type": "meal"
+              },
+              {
+                  "display_name": "Thai",
+                  "id": 64460,
+                  "name": "thai",
+                  "root_tag_type": "cuisine",
+                  "type": "asian"
+              },
+              {
+                  "display_name": "Seafood",
+                  "id": 64459,
+                  "name": "seafood",
+                  "root_tag_type": "meal",
+                  "type": "dinner"
+              },
+              {
+                  "display_name": "Japanese",
+                  "id": 64454,
+                  "name": "japanese",
+                  "root_tag_type": "cuisine",
+                  "type": "asian"
+              }
+          ],
+          "thumb_big": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/443033.jpg?output-format=auto&output-quality=60&resize=600:*",
+          "thumb_dblbig": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/443033.jpg",
+          "thumb_standard": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/443033.jpg?output-format=auto&output-quality=60&resize=300:*",
+          "thumbnail_alt_text": "",
+          "thumbnail_url": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/443033.jpg",
+          "times": {
+              "cook_time": {
+                  "display": "",
+                  "iso": "",
+                  "minutes": 0
+              },
+              "prep_time": {
+                  "display": "",
+                  "iso": "",
+                  "minutes": 0
+              },
+              "total_time": {
+                  "display": "",
+                  "iso": "",
+                  "minutes": 0
+              }
+          },
+          "tips_and_ratings_enabled": true,
+          "type": "recipe",
+          "updated_at": 1692309600,
+          "video_duration": 138113,
+          "video_hls_url": "https://vid.tasty.co/output/286281/hls24_1682546842.m3u8",
+          "video_id": 186031,
+          "video_type": "video",
+          "video_url": "https://vid.tasty.co/output/286281/landscape_480/1682546842",
+          "video_urls": {
+              "fallback": {
+                  "aspect": "square",
+                  "bit_rate": 1376,
+                  "container": "mp4",
+                  "content_type": "video/mp4",
+                  "duration": 138113,
+                  "file_size": 23739939,
+                  "height": 480,
+                  "maximum_bit_rate": null,
+                  "minimum_bit_rate": null,
+                  "name": "mp4_480x480",
+                  "poster_url": "https://img.buzzfeed.com/video-transcoder-prod/output/286281/landscape_480/1682546842_00001.png",
+                  "url": "https://vid.tasty.co/output/286281/landscape_480/1682546842",
+                  "width": 480
+              },
+              "large_video": {
+                  "aspect": "square",
+                  "bit_rate": 2363,
+                  "container": "mp4",
+                  "content_type": "video/mp4",
+                  "duration": 138113,
+                  "file_size": 40783689,
+                  "height": 720,
+                  "maximum_bit_rate": null,
+                  "minimum_bit_rate": null,
+                  "name": "mp4_720x720",
+                  "poster_url": "https://img.buzzfeed.com/video-transcoder-prod/output/286281/landscape_720/1682546842_00001.png",
+                  "url": "https://vid.tasty.co/output/286281/landscape_720/1682546842",
+                  "width": 720
+              }
+          }
+      },
+      "relatedRecipes": [
+          {
+              "aspect_ratio": "16:9",
+              "compilations": [],
+              "credits": [
+                  {
+                      "name": null,
+                      "type": "internal"
+                  }
+              ],
+              "id": 8014,
+              "name": "Shawarma Nachos As Made By Amina",
+              "position": 0,
+              "slug": "shawarma-nachos-as-made-by-amina",
+              "tags": [
+                  "british",
+                  "chinese",
+                  "italian",
+                  "middle_eastern",
+                  "comfort_food",
+                  "healthy",
+                  "low_carb",
+                  "thanksgiving",
+                  "appetizers",
+                  "dinner",
+                  "lunch",
+                  "sides",
+                  "baking",
+                  "grill",
+                  "date_night",
+                  "game_day",
+                  "party",
+                  "weeknight",
+                  "fall",
+                  "summer",
+                  "blender",
+                  "broiler",
+                  "cast_iron_pan",
+                  "freezer_friendly",
+                  "microwave",
+                  "stove_top",
+                  "meal_prep",
+                  "one_pot_or_pan",
+                  "pan_fry",
+                  "baking_pan",
+                  "liquid_measuring_cup",
+                  "dry_measuring_cups",
+                  "measuring_spoons",
+                  "mixing_bowl",
+                  "air_fryer",
+                  "low_calorie",
+                  "high_protein",
+                  "low_sugar",
+                  "low_fat",
+                  "high_fiber",
+                  "cuisine",
+                  "meal",
+                  "dietary",
+                  "asian",
+                  "holidays",
+                  "southern",
+                  "picnic",
+                  "bread",
+                  "rolls",
+                  "chicken",
+                  "jewish"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/fc817b062b1e48ecbdf5b5f421825778.jpeg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/fc817b062b1e48ecbdf5b5f421825778.jpeg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/fc817b062b1e48ecbdf5b5f421825778.jpeg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/fc817b062b1e48ecbdf5b5f421825778.jpeg",
+              "times": {
+                  "cook_time": {
+                      "display": "35 minutes",
+                      "iso": "PT35M",
+                      "minutes": 35
+                  },
+                  "prep_time": {
+                      "display": "20 minutes",
+                      "iso": "PT20M",
+                      "minutes": 20
+                  },
+                  "total_time": {
+                      "display": "2 hr 55 min",
+                      "iso": "PT2H55M",
+                      "minutes": 175
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "16:9",
+              "compilations": [],
+              "credits": [
+                  {
+                      "name": "Aleya Zenieris",
+                      "type": "internal"
+                  },
+                  {
+                      "name": "Magdalena O’Neal",
+                      "type": "internal"
+                  }
+              ],
+              "id": 8391,
+              "name": "Herby Street Dog Sandwich",
+              "position": 1,
+              "slug": "herby-street-dog-sandwich",
+              "tags": [
+                  "comfort_food",
+                  "dairy_free",
+                  "gluten_free",
+                  "dinner",
+                  "kid_friendly",
+                  "lunch",
+                  "grill",
+                  "party",
+                  "bbq",
+                  "summer",
+                  "broiler",
+                  "stove_top",
+                  "pan_fry",
+                  "special_occasion",
+                  "spatula",
+                  "tongs",
+                  "hawaiian",
+                  "under_1_hour",
+                  "high_protein",
+                  "high_fiber",
+                  "bread",
+                  "sweet_breakfasts",
+                  "sandwiches",
+                  "beef"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/ff1f96c491ad41a1b765a53186d5939c.jpeg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/ff1f96c491ad41a1b765a53186d5939c.jpeg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/ff1f96c491ad41a1b765a53186d5939c.jpeg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/ff1f96c491ad41a1b765a53186d5939c.jpeg",
+              "times": {
+                  "cook_time": {
+                      "display": "45 minutes",
+                      "iso": "PT45M",
+                      "minutes": 45
+                  },
+                  "prep_time": {
+                      "display": "30 minutes",
+                      "iso": "PT30M",
+                      "minutes": 30
+                  },
+                  "total_time": {
+                      "display": "1 hr 5 min",
+                      "iso": "PT1H5M",
+                      "minutes": 65
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "16:9",
+              "compilations": [],
+              "credits": [
+                  {
+                      "name": null,
+                      "type": "internal"
+                  }
+              ],
+              "id": 7125,
+              "name": "Cherry Cola Chicken Sandwich As Made By Jermaine",
+              "position": 2,
+              "slug": "cherry-cola-chicken-sandwich-as-made-by-jermaine",
+              "tags": [
+                  "comfort_food",
+                  "dairy_free",
+                  "gluten_free",
+                  "easy",
+                  "dinner",
+                  "kid_friendly",
+                  "lunch",
+                  "spring",
+                  "summer",
+                  "stove_top",
+                  "oven_mitts",
+                  "saute_pan",
+                  "spatula",
+                  "tongs",
+                  "chefs_knife",
+                  "cutting_board",
+                  "liquid_measuring_cup",
+                  "dry_measuring_cups",
+                  "measuring_spoons",
+                  "microplane",
+                  "mixing_bowl",
+                  "black_history_month",
+                  "air_fryer",
+                  "under_45_minutes",
+                  "under_1_hour",
+                  "southern",
+                  "sandwiches",
+                  "chicken"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/b11f2fa2b4a048749974ea27b5c801f2.jpeg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/b11f2fa2b4a048749974ea27b5c801f2.jpeg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/b11f2fa2b4a048749974ea27b5c801f2.jpeg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/b11f2fa2b4a048749974ea27b5c801f2.jpeg",
+              "times": {
+                  "cook_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "prep_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "total_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "1:1",
+              "compilations": [
+                  2894
+              ],
+              "credits": [
+                  {
+                      "name": "Matthew Johnson",
+                      "type": "internal"
+                  }
+              ],
+              "id": 3748,
+              "name": "Vietnamese Shaking Beef",
+              "position": 3,
+              "slug": "vietnamese-shaking-beef",
+              "tags": [
+                  "vietnamese",
+                  "comfort_food",
+                  "dairy_free",
+                  "gluten_free",
+                  "low_carb",
+                  "under_30_minutes",
+                  "dinner",
+                  "party",
+                  "weeknight",
+                  "wok",
+                  "meal_prep",
+                  "pan_fry",
+                  "plastic_wrap",
+                  "pyrex",
+                  "chefs_knife",
+                  "cutting_board",
+                  "measuring_spoons",
+                  "mixing_bowl",
+                  "asian_pacific_american_heritage_month",
+                  "keto",
+                  "low_calorie",
+                  "high_protein",
+                  "low_sugar",
+                  "low_fat",
+                  "beef"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/150402.jpg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/150402.jpg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/150402.jpg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/150402.jpg",
+              "times": {
+                  "cook_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "prep_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "total_time": {
+                      "display": "Under 30 minutes",
+                      "iso": "PT30M",
+                      "minutes": 30
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "16:9",
+              "compilations": [],
+              "credits": [
+                  {
+                      "name": "Matt Ciampa",
+                      "type": "internal"
+                  },
+                  {
+                      "name": "Kelly Paige",
+                      "type": "internal"
+                  }
+              ],
+              "id": 6876,
+              "name": "Maggi Fried Chicken Sandwich",
+              "position": 4,
+              "slug": "maggi-fried-chicken-sandwich",
+              "tags": [
+                  "north_american",
+                  "indian",
+                  "comfort_food",
+                  "dairy_free",
+                  "easy",
+                  "dinner",
+                  "kid_friendly",
+                  "lunch",
+                  "date_night",
+                  "weeknight",
+                  "summer",
+                  "fusion",
+                  "stove_top",
+                  "meal_prep",
+                  "one_pot_or_pan",
+                  "pan_fry",
+                  "saute_pan",
+                  "spatula",
+                  "tongs",
+                  "chefs_knife",
+                  "cutting_board",
+                  "dry_measuring_cups",
+                  "measuring_spoons",
+                  "microplane",
+                  "mixing_bowl",
+                  "under_1_hour",
+                  "bread",
+                  "sandwiches",
+                  "chicken"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/291800.jpg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/291800.jpg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/291800.jpg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/291800.jpg",
+              "times": {
+                  "cook_time": {
+                      "display": "8 minutes",
+                      "iso": "PT8M",
+                      "minutes": 8
+                  },
+                  "prep_time": {
+                      "display": "10 minutes",
+                      "iso": "PT10M",
+                      "minutes": 10
+                  },
+                  "total_time": {
+                      "display": "55 minutes",
+                      "iso": "PT55M",
+                      "minutes": 55
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "1:1",
+              "compilations": [
+                  732,
+                  1145,
+                  1146,
+                  1892,
+                  2316,
+                  2550,
+                  2812,
+                  2953
+              ],
+              "credits": [
+                  {
+                      "name": "Rachel Gaewski",
+                      "type": "internal"
+                  }
+              ],
+              "id": 4353,
+              "name": "Giant Veggie Burger",
+              "position": 5,
+              "slug": "giant-veggie-burger",
+              "tags": [
+                  "healthy",
+                  "vegan",
+                  "vegetarian",
+                  "dinner",
+                  "lunch",
+                  "baking",
+                  "party",
+                  "food_processor",
+                  "big_batch",
+                  "mashup",
+                  "special_occasion",
+                  "oven_mitts",
+                  "pyrex",
+                  "saute_pan",
+                  "spatula",
+                  "baking_pan",
+                  "chefs_knife",
+                  "cutting_board",
+                  "dry_measuring_cups",
+                  "measuring_spoons",
+                  "mixing_bowl",
+                  "under_1_hour",
+                  "high_protein",
+                  "high_fiber"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/177182.jpg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/177182.jpg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/177182.jpg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/177182.jpg",
+              "times": {
+                  "cook_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "prep_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "total_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "1:1",
+              "compilations": [],
+              "credits": [
+                  {
+                      "name": "Matthew Johnson",
+                      "type": "internal"
+                  }
+              ],
+              "id": 1215,
+              "name": "One-Pan Chicken And Veggie Meal Prep 2 Ways",
+              "position": 6,
+              "slug": "one-pan-chicken-and-veggie-meal-prep-2-ways",
+              "tags": [
+                  "japanese",
+                  "mexican",
+                  "dairy_free",
+                  "healthy",
+                  "easy",
+                  "lunch",
+                  "baking",
+                  "weeknight",
+                  "fusion",
+                  "meal_prep",
+                  "one_pot_or_pan",
+                  "oven_mitts",
+                  "parchment_paper",
+                  "tongs",
+                  "tupperware",
+                  "whisk",
+                  "wooden_spoon",
+                  "baking_pan",
+                  "chefs_knife",
+                  "cutting_board",
+                  "liquid_measuring_cup",
+                  "high_protein",
+                  "high_fiber"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4382f1578184461cbf72f4f8d0786a2a/FINAL_FB_06.jpg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4382f1578184461cbf72f4f8d0786a2a/FINAL_FB_06.jpg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4382f1578184461cbf72f4f8d0786a2a/FINAL_FB_06.jpg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4382f1578184461cbf72f4f8d0786a2a/FINAL_FB_06.jpg",
+              "times": {
+                  "cook_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "prep_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "total_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "1:1",
+              "compilations": [
+                  1124,
+                  2118,
+                  2743
+              ],
+              "credits": [
+                  {
+                      "name": "Betsy Carter",
+                      "type": "internal"
+                  }
+              ],
+              "id": 5593,
+              "name": "Golden Chicken Sandwich As Made By Chef Kuniko Yagi",
+              "position": 7,
+              "slug": "golden-chicken-sandwich-as-made-by-chef-kuniko-yagi",
+              "tags": [
+                  "japanese",
+                  "comfort_food",
+                  "dairy_free",
+                  "gluten_free",
+                  "healthy",
+                  "dinner",
+                  "lunch",
+                  "deep_fry",
+                  "date_night",
+                  "weeknight",
+                  "spring",
+                  "summer",
+                  "stove_top",
+                  "meal_prep",
+                  "one_pot_or_pan",
+                  "special_occasion",
+                  "plastic_wrap",
+                  "sauce_pan",
+                  "tongs",
+                  "whisk",
+                  "baking_pan",
+                  "chefs_knife",
+                  "cooling_rack",
+                  "cutting_board",
+                  "liquid_measuring_cup",
+                  "dry_measuring_cups",
+                  "measuring_spoons",
+                  "mixing_bowl",
+                  "under_45_minutes",
+                  "under_1_hour",
+                  "asian",
+                  "bread",
+                  "sweet_breakfasts",
+                  "sandwiches",
+                  "coleslaws",
+                  "dressings",
+                  "chicken",
+                  "pork",
+                  "pizza",
+                  "pot_roast",
+                  "quiches",
+                  "stews",
+                  "baked_pasta",
+                  "shellfish",
+                  "dips",
+                  "sliders",
+                  "cupcakes",
+                  "gin"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/faa40a127cfe4a0ba4a57aff2ed2f151/BFV58098_TastyStoryChefKuniko_KP_FB_V002.jpg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/faa40a127cfe4a0ba4a57aff2ed2f151/BFV58098_TastyStoryChefKuniko_KP_FB_V002.jpg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/faa40a127cfe4a0ba4a57aff2ed2f151/BFV58098_TastyStoryChefKuniko_KP_FB_V002.jpg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/faa40a127cfe4a0ba4a57aff2ed2f151/BFV58098_TastyStoryChefKuniko_KP_FB_V002.jpg",
+              "times": {
+                  "cook_time": {
+                      "display": "10 minutes",
+                      "iso": "PT10M",
+                      "minutes": 10
+                  },
+                  "prep_time": {
+                      "display": "20 minutes",
+                      "iso": "PT20M",
+                      "minutes": 20
+                  },
+                  "total_time": {
+                      "display": "45 minutes",
+                      "iso": "PT45M",
+                      "minutes": 45
+                  }
+              },
+              "type": "recipe"
+          },
+          {
+              "aspect_ratio": "16:9",
+              "compilations": [
+                  708,
+                  2741,
+                  3516
+              ],
+              "credits": [
+                  {
+                      "name": "Kiano Moju",
+                      "type": "internal"
+                  },
+                  {
+                      "name": "Kiano Moju",
+                      "type": "internal"
+                  },
+                  {
+                      "name": "Rie McClenny",
+                      "type": "internal"
+                  }
+              ],
+              "id": 4500,
+              "name": "Crispy Fish Tacos",
+              "position": 8,
+              "slug": "crispy-fish-tacos",
+              "tags": [
+                  "north_american",
+                  "mexican",
+                  "seafood",
+                  "comfort_food",
+                  "healthy",
+                  "easy",
+                  "dinner",
+                  "deep_fry",
+                  "game_day",
+                  "party",
+                  "weeknight",
+                  "spring",
+                  "summer",
+                  "blender",
+                  "stove_top",
+                  "special_occasion",
+                  "paper_napkins",
+                  "pyrex",
+                  "tongs",
+                  "whisk",
+                  "baking_pan",
+                  "cooling_rack",
+                  "liquid_measuring_cup",
+                  "dry_measuring_cups",
+                  "measuring_spoons",
+                  "mixing_bowl",
+                  "pescatarian",
+                  "cinco_de_mayo",
+                  "under_1_hour",
+                  "high_protein",
+                  "high_fiber",
+                  "tacos_burritos",
+                  "fish"
+              ],
+              "thumb_big": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/ad9e118115e54339a10d206eb5142418/YT_FINAL.jpg?output-format=auto&output-quality=60&resize=600:*",
+              "thumb_dblbig": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/ad9e118115e54339a10d206eb5142418/YT_FINAL.jpg?output-quality=100&resize=900:*",
+              "thumb_standard": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/ad9e118115e54339a10d206eb5142418/YT_FINAL.jpg?output-format=auto&output-quality=60&resize=300:*",
+              "thumbnail_alt_text": "",
+              "thumbnail_url": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/ad9e118115e54339a10d206eb5142418/YT_FINAL.jpg",
+              "times": {
+                  "cook_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "prep_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  },
+                  "total_time": {
+                      "display": "",
+                      "iso": "",
+                      "minutes": 0
+                  }
+              },
+              "type": "recipe"
+          }
+      ],
+      "slug": "grilled-bang-bang-shrimp-burger-with-asian-brussels-sprouts"
+  },
+  "message": "Successful",
+  "status": true
+}

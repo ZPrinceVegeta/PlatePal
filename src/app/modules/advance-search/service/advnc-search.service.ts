@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -31,6 +31,9 @@ export class AdvncSearchService {
           }
         });
         this.recipeData$.next(response)
+      },
+      error : (err: HttpErrorResponse)=>{
+
       }
     })
   }

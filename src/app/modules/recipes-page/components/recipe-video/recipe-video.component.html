@@ -1,0 +1,14 @@
+
+<div class="video-wrapper" *ngIf="screenSize == 'Large' || screenSize == 'Medium'">
+  <video class="video" controls width="100%" height="300">
+    <source [src]="url" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<div class="video-mobile-wrapper " *ngIf="screenSize == 'Small' || screenSize == 'XSmall'">
+  <video class="video" controls width="100%" height="100%">
+    <source [src]="url" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+

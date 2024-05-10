@@ -1,0 +1,82 @@
+.instruction_wrapper{
+  padding: 50px 0 0 90px;
+  .ingredients{
+    .heading{
+      font-size: clamp(1.25rem, 1.075rem + 0.875vw, 2.125rem);
+      font-family: ui-monospace;
+      font-weight: 600;
+      border-bottom: 3px solid #606060;
+      padding-bottom: 5px;
+      color: #606060;
+      margin-bottom: 30px;
+    }
+    .sub_ingredients{
+      list-style: none;
+      padding-left: 0px !important;
+      .subingredient-list-item{
+        .head{
+          font-family: 'Merriweather', serif;
+          font-size: clamp(1.5rem, 1.2625rem + -0.0625vw, 1.1875rem);
+          font-weight: 600;
+        }
+        .single-ingredient{
+          font-size: clamp(0.8rem, 0.75rem + 0.6vw, 1.25rem);
+          margin: 14px 0;
+          font-family: serif;
+          }
+      }
+
+
+
+    }
+  }
+
+  .preparation{
+    margin-top: 30px;
+    .heading{
+      font-size: clamp(1.25rem, 1.075rem + 0.875vw, 2.125rem);
+      font-family: ui-monospace;
+      font-weight: 600;
+      border-bottom: 3px solid #606060;
+      padding-bottom: 13px;
+      color: #606060;
+      margin-bottom: 30px;
+    }
+    .method{
+      font-size: clamp(0.8rem, 0.75rem + 0.6vw, 1.25rem);
+      margin: 25px 0;
+      font-family: serif;
+      .index{
+        color:#585656;
+        font-weight: 600;
+        margin-right: 8px;
+      }
+    }
+  }
+  &.Small{
+
+    padding: 25px !important;
+    .method , .single-ingredient{
+      font-size: 21px !important;
+      line-height: 28px !important;
+    }
+    .heading{
+      font-size: 35px !important;
+      padding-bottom: 18px !important;
+    }
+
+  }
+  &.XSmall{
+
+    padding: 25px !important;
+    .method , .single-ingredient{
+      font-size: 21px !important;
+      line-height: 28px !important;
+    }
+    .heading{
+      font-size: 35px !important;
+      padding-bottom: 18px !important;
+    }
+
+  }
+}

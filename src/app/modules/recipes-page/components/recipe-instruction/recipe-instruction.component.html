@@ -1,0 +1,25 @@
+<div class="instruction_wrapper {{screenSize}}">
+  <div class="ingredients" *ngIf="recipeData && recipeData.ingredient_sections">
+    <h2 class="heading">Ingredients</h2>
+    <ul class="sub_ingredients">
+      <ng-container *ngFor="let subingredient of recipeData.ingredient_sections">
+        <li class="subingredient-list-item">
+          <div class="head">For {{subingredient.name}}</div>
+          <ul *ngFor="let ingredient of subingredient.ingredients">
+            <li class="single-ingredient"> {{ingredient?.primary_unit?.quantity}} {{ingredient?.primary_unit?.display}} {{ingredient?.name}}
+              {{ingredient?.extra_comment}}</li>
+          </ul>
+        </li>
+
+      </ng-container>
+    </ul>
+  </div>
+  <div class="preparation" *ngIf="recipeData && recipeData.instructions">
+    <div class="heading">
+      Preparation
+    </div>
+    <ng-container *ngFor="let instruction of recipeData.instructions ; let i = index">
+      <div class="method"><span class="index">{{i}}. </span>{{instruction.display_text}}</div>
+    </ng-container>
+  </div>
+</div>

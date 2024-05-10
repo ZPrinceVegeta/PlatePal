@@ -1,0 +1,7 @@
+<div class="moreRecipeCard {{screenSize}}" (click)="routeTorecipe()">
+  <div class="thumbnail">
+    <img [src]="cardData?.thumbnail_url" alt="">
+  </div>
+  <p class="name">{{cardData?.name}}</p>
+  <p class="author">By {{cardData?.author}}</p>
+</div>

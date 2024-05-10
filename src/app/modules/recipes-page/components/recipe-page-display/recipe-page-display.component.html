@@ -1,0 +1,62 @@
+<!-- your-component.component.html -->
+<div class="wrapper {{currentScreen}}" #wrapper  (scroll)="onParentScroll($event)">
+  <div *ngIf="reciepeData ; else skelton"  class="recipe-top ">
+    <div class="wrapper-left">
+      <div class="name">{{reciepeData?.name}}</div>
+      <div class="author" *ngIf="reciepeData.credits && reciepeData.credits.byline ; else anonymus">By {{reciepeData?.credits?.byline}}</div>
+      <ng-template #anonymus ><div class="author">By Anonymous</div></ng-template>
+      <div class="saveRecipe">
+        <div class="saveBtn" *ngIf="!savedStatus" (click)="saveRecipe(true)"><mat-icon>bookmark_border</mat-icon>Add Favorite</div>
+        <div class="saveBtn" *ngIf="savedStatus" (click)="saveRecipe(false)"><mat-icon>bookmark</mat-icon>Remove Favorite</div>
+
+      </div>
+      <div class="starRating" *ngIf="reciepeData.ratings && reciepeData.ratings.score">
+        <ng-container *ngFor="let i of  userScoreArray , let index = index">
+          <mat-icon class="star" *ngIf="i === 'full'">star</mat-icon>
+          <mat-icon class="star" *ngIf="i === 'half'">star_half</mat-icon>
+          <mat-icon class="star"  *ngIf="i === 'empty'">star_border</mat-icon>
+        </ng-container>
+      </div>
+    </div>
+    <div class="wrapper-right">
+      <img class="thumbnail-img" [src]="reciepeData?.thumbnail_url" [alt]="'No Image Found'">
+    </div>
+  </div>
+  <ng-template #skelton>
+    <div class="loader-wrapper">
+
+    </div>
+  </ng-template>
+  <ng-container *ngIf="reciepeData && reciepeData?.instructions" ></ng-container>
+  <div class="recipebottom" #recipeBtm >
+    <div class="left">
+      <app-recipe-instruction [recipeData]="reciepeData" [screenSize]="currentScreen"></app-recipe-instruction>
+    </div>
+    <div class="right" *ngIf="reciepeData && reciepeData.video_url">
+      <div class="video" #videoPlayer >
+       <app-recipe-video [ngClass]="{'fixed': isFixed}"  [screenSize]="currentScreen"  [url]="reciepeData.video_url"> </app-recipe-video>
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="moreRecipe" *ngIf="recipeResponse?.data.relatedRecipes && recipeResponse?.data.relatedRecipes.length > 0">
+    <div class="readMore">Read More</div>
+    <div class="moreRecipeWrapper">
+      <ng-container *ngFor="let moreRecipe of recipeResponse?.data.relatedRecipes">
+        <div class="more-recipe-card" *ngIf="moreRecipe.type == 'recipe'">
+          <app-more-recipe-card [screenSize]="currentScreen"  [cardData]="moreRecipe"></app-more-recipe-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+</div>
+
+<!-- <div>
+  <video width="720" height="480" controls>
+    <source src="https://s3.amazonaws.com/video-api-prod/assets/84b85075d71c4b30a8f0e814684708d6/BFV102309_PoppinPatties_DF_V10_042423_FB.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div> -->

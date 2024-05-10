@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { BreakpointresponsiveService } from './../../../comman/service/breakpointresponsive.service';
 import {
@@ -26,7 +27,8 @@ export class CardRecipeComponent implements OnInit, AfterViewInit {
 
   constructor(
     private elementref: ElementRef,
-    private responsive: BreakpointresponsiveService
+    private responsive: BreakpointresponsiveService,
+    private router : Router
   ) {}
   ngAfterViewInit(): void {
     const myElement =
@@ -61,6 +63,15 @@ export class CardRecipeComponent implements OnInit, AfterViewInit {
     }
   }
   viewRecipe() {
-    console.log(1);
+    console.log(this.passedData);
+
+    if(this.passedData.response_type.toLowerCase() == 'recipe'){
+      this.router.navigate(['/recipe',{slug:this.passedData?.slug}])
+    }
+    else if(this.passedData.response_type.toLowerCase() == "compilation"){
+
+      this.router.navigate(['/compilation',{slug:this.passedData?.slug}])
+
+    }
   }
 }
