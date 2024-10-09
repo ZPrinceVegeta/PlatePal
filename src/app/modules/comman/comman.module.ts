@@ -10,6 +10,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { KeypipePipe } from './pipe/keypipe.pipe';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FooterComponent } from './components/header/footer/footer.component';
 
 
 
@@ -25,7 +26,8 @@ const material=[
 @NgModule({
   declarations: [
     HeaderComponent,
-    KeypipePipe
+    KeypipePipe,
+    FooterComponent
   ],
   imports: [
     CommonModule,

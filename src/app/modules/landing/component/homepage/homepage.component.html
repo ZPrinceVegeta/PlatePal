@@ -1,14 +1,55 @@
-<div class="backgroundimageContainer">
-  <div class="searchboxhome" [class.tabletPortait]="deviceType=='tablet' && deviceOrientation=='potrait'" [class.handsetLandscape]="deviceType=='handset' && deviceOrientation=='landscape'" [class.handsetPotrait]="deviceType=='handset' && deviceOrientation=='potrait'">
-    <div class="heading">
-      Find a Recipe
-    </div>
-    <div class="searchbox" (click)="openSearch()">
-      <mat-icon>search</mat-icon>
-    </div>
-    <div class="advancedSearch">
-      ADVANCED   SEARCH
+<div class="container-body" [ngClass]="currentScreenSize">
+  <div class="backgroundimageContainer">
+    <div class="searchboxhome" >
+      <div class="heading">
+        Find a Recipe
+      </div>
+      <div class="searchbox" (click)="openSearch()">
+        <mat-icon>search</mat-icon>
+      </div>
+      <div class="advancedSearch">
+        ADVANCED   SEARCH
+      </div>
     </div>
   </div>
+  <div class="dietryContent">
+    <div class="header">
+      <h2>RECIPES BASED ON DIETARY PREFERENCES</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="btn-container">
+      <div class="btnSection">
+        <ng-container *ngFor="let type of dietryTypeList?.type_list">
+          <button class="dietryBtn"  (click)="selectDietryType(type)" [class.selected]="type.selected">{{type.display_name}}</button>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div (click)="slideCard('r')"  class="slideBtn backBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg>
+      </div>
+      <div (click)="slideCard('l')" class="slideBtn frwdBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </div>
+      <div class="cardSection" #slideBody>
+        <div class="card" *ngFor="let card of recipeArr ; let index = index" (click)="routeTorecipe()">
+          <!-- <div class="moreRecipeCard" (click)="routeTorecipe()"> -->
+            <div class="thumbnail">
+              <img [src]="card?.thumbnail_url" alt="">
+            </div>
+            <p class="name">{{card?.name}}</p>
+            <!-- <p class="author">By {{card?.author}}</p> -->
+          <!-- </div> -->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-<div class="randomContent"></div>
+

@@ -1,9 +1,12 @@
 import { SearchComponentComponent } from '../search-component/search-component.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
-import { Subscription, Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
+import { LandingServiceService } from '../../services/landing-service.service';
+import { BreakpointresponsiveService } from 'src/app/modules/comman/service/breakpointresponsive.service';
+
 // import {*asColorThief}
 
 @Component({
@@ -18,88 +21,125 @@ export class HomepageComponent implements OnInit, OnDestroy{
   private resizeObserver!: ResizeObserver;
 
   destroyed = new Subject<void>();
-  deviceType: string = '';
-  deviceOrientation: string = '';
-  // private images=['assets/images/bg-home-img3.jpg','assets/images/bg-home-img8.jpg','assets/images/bg-home-img5.jpg','assets/images/home-bg-img1.jpg','assets/images/home-bg-img2.jpg','assets/images/home-bg-img3.jpg']
-  private images = ['assets/images/bg-home-img8.jpg'];
+  private images=['assets/images/bg-home-img3.jpg','assets/images/bg-home-img8.jpg','assets/images/bg-home-img5.jpg','assets/images/home-bg-img1.jpg','assets/images/home-bg-img2.jpg','assets/images/home-bg-img3.jpg']
+  // private images = ['assets/images/bg-home-img8.jpg'];
+  @ViewChild('slideBody') private slideBody !: ElementRef
+  dietryTypeList : any = []
+  recipeArr :any = []
+  private intervalId: any;
+  currentScreenSize = '';
   constructor(
     private elementRef: ElementRef,
-    private responsive: BreakpointObserver,
-    private dialog: MatDialog
+    private breakpointService: BreakpointresponsiveService,
+    private dialog: MatDialog,
+    private landing_service:LandingServiceService
+
   )
    {
-    // this.images.forEach((imageSrc) => {
-    //   const image = new Image();
-    //   image.src = imageSrc;
-    // });
+    this.breakpointService.currentScreenSize$
+    .pipe(takeUntil(this.destroyed))
+    .subscribe((size) => {
+      this.currentScreenSize = size;
+    });
   }
   ngOnDestroy() {
     this.destroyed.next()
     this.destroyed.complete()
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
     this.resizeObserver.disconnect()
+
   }
 
   ngOnInit() {
     this.container = this.elementRef.nativeElement.querySelector(
       '.backgroundimageContainer'
     );
-    this.container.style.backgroundImage =
-      'url(/assets/images/bg-home-img8.jpg)';
+    this.updateBackgroundImage();
+
+    this.intervalId = setInterval(() => {
+      this.updateBackgroundImage();
+    }, 10000); // Change image every 10 seconds
+
+    this.findAspectRatio();
+    this.landing_service.getTypeList().subscribe({
+      next: (res: any) => {
+        console.log(res);
+
+        if(res){
+          // this.dietryTypeList = [{name: 'all', display_name: 'All', id: null}]
+          this.dietryTypeList = res.food_type.find((type : any) => type.type == "dietary")
+          this.dietryTypeList.type_list.map((type : any) => type.selected = false)
+          this.dietryTypeList.type_list.unshift({name: '', display_name: 'All', id: '' , selected : true})
+          this.getDietryTypeRecipeList('')
+        }
+        console.log(this.dietryTypeList);
+
+      },
+    });
+
+  }
+
+
+  private updateBackgroundImage() {
+    this.container.style.backgroundImage = `url(${this.images[this.currentImageIndex]})`;
     this.container.style.backgroundPosition = 'center';
     this.container.style.backgroundSize = '100% auto';
     this.container.style.backgroundRepeat = 'no-repeat';
-    this.findAspectRatio();
+
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
   }
 
   findAspectRatio() {
-    this.responsive.observe(Breakpoints.Web).pipe(takeUntil(this.destroyed)).subscribe({
-      next: (res) => {
-        if (res.matches) {
-          this.deviceType = 'web';
-         this.responsive.observe(Breakpoints.WebLandscape).pipe(takeUntil(this.destroyed)).subscribe({
-            next: (orientation) => {
-              if (orientation.matches) {
-                this.deviceOrientation = 'landscape';
-              } else {
-                this.deviceOrientation = 'potrait';
-              }
-            },
-          });
-        }
-      },
-    });
-    this.responsive.observe(Breakpoints.Tablet).pipe(takeUntil(this.destroyed)).subscribe({
-      next: (res) => {
-        if (res.matches) {
-          this.deviceType = 'tablet';
-          this.responsive.observe(Breakpoints.TabletLandscape).pipe(takeUntil(this.destroyed)).subscribe({
-            next: (orientation) => {
-              if (orientation.matches) {
-                this.deviceOrientation = 'landscape';
-              } else {
-                this.deviceOrientation = 'potrait';
-              }
-            },
-          });
-        }
-      },
-    });
-    this.responsive.observe(Breakpoints.Handset).pipe(takeUntil(this.destroyed)).subscribe({
-      next: (res) => {
-        if (res.matches) {
-          this.deviceType = 'handset';
-        this.responsive.observe(Breakpoints.HandsetLandscape).pipe(takeUntil(this.destroyed)).subscribe({
-            next: (orientation) => {
-              if (orientation.matches) {
-                this.deviceOrientation = 'landscape';
-              } else {
-                this.deviceOrientation = 'potrait';
-              }
-            },
-          });
-        }
-      },
-    });
+    // this.responsive.observe(Breakpoints.Web).pipe(takeUntil(this.destroyed)).subscribe({
+    //   next: (res) => {
+    //     if (res.matches) {
+    //       this.deviceType = 'web';
+    //      this.responsive.observe(Breakpoints.WebLandscape).pipe(takeUntil(this.destroyed)).subscribe({
+    //         next: (orientation) => {
+    //           if (orientation.matches) {
+    //             this.deviceOrientation = 'landscape';
+    //           } else {
+    //             this.deviceOrientation = 'potrait';
+    //           }
+    //         },
+    //       });
+    //     }
+    //   },
+    // });
+    // this.responsive.observe(Breakpoints.Tablet).pipe(takeUntil(this.destroyed)).subscribe({
+    //   next: (res) => {
+    //     if (res.matches) {
+    //       this.deviceType = 'tablet';
+    //       this.responsive.observe(Breakpoints.TabletLandscape).pipe(takeUntil(this.destroyed)).subscribe({
+    //         next: (orientation) => {
+    //           if (orientation.matches) {
+    //             this.deviceOrientation = 'landscape';
+    //           } else {
+    //             this.deviceOrientation = 'potrait';
+    //           }
+    //         },
+    //       });
+    //     }
+    //   },
+    // });
+    // this.responsive.observe(Breakpoints.Handset).pipe(takeUntil(this.destroyed)).subscribe({
+    //   next: (res) => {
+    //     if (res.matches) {
+    //       this.deviceType = 'handset';
+    //     this.responsive.observe(Breakpoints.HandsetLandscape).pipe(takeUntil(this.destroyed)).subscribe({
+    //         next: (orientation) => {
+    //           if (orientation.matches) {
+    //             this.deviceOrientation = 'landscape';
+    //           } else {
+    //             this.deviceOrientation = 'potrait';
+    //           }
+    //         },
+    //       });
+    //     }
+    //   },
+    // });
     this.resizeObserver = new ResizeObserver((entries) => {
       const screenWidth = entries[0].contentRect.width;
       // console.log('Screen width:', screenWidth);
@@ -123,5 +163,32 @@ export class HomepageComponent implements OnInit, OnDestroy{
     this.dialog.open(SearchComponentComponent, {
       panelClass: 'full-screen-dialog',
     });
+  }
+  selectDietryType(type : any){
+    this.dietryTypeList.type_list.map((type : any) => type.selected = false)
+    type.selected = true;
+    this.getDietryTypeRecipeList(type.name)
+  }
+  getDietryTypeRecipeList(type : string){
+    this.landing_service.setRecipeData(type).subscribe({
+      next : (res : any) =>{
+        console.log('recipe response' , res);
+        this.recipeArr = res.results
+      }
+    })
+  }
+  slideCard(direction : string){
+    let marginLeft = this.slideBody.nativeElement.style.marginLeft ? this.slideBody.nativeElement.style.marginLeft : 'calc(0%)'
+    // console.log(this.arr.length);
+    if(direction == 'l'){
+      this.slideBody.nativeElement.style.marginLeft = `calc(-102% + ${marginLeft})`
+    }
+    if(direction == 'r' && marginLeft != 'calc(0%)' ){
+      this.slideBody.nativeElement.style.marginLeft = `calc(102% + ${marginLeft})`
+    }
+    console.log( this.slideBody.nativeElement.style.marginLeft);
+  }
+  routeTorecipe(){
+
   }
 }

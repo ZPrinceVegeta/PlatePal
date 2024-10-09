@@ -86,6 +86,8 @@ export class AdadvSearchHeaderComponent
     this.service.getTypeList().subscribe({
       next: (res: any) => {
         this.typleList = res;
+        console.log(this.typleList);
+
       },
     });
     this.service.setRecipeData(0,12,this.selectedTagList,this.search_text);
@@ -109,7 +111,7 @@ export class AdadvSearchHeaderComponent
         this.selectedTagList=this.selectedTagList + `,${element.name}`
       }
 
-    }); 
+    });
     this.service.setRecipeData(0,12,this.selectedTagList,this.search_text);
 
   }

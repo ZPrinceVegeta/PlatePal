@@ -1,3 +1,4 @@
+import { LandingServiceService } from './../../services/landing-service.service';
 import { Subscription, Subject, takeUntil } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit, OnDestroy, Pipe } from '@angular/core';
@@ -13,7 +14,9 @@ export class SearchComponentComponent implements OnInit,OnDestroy{
   responsiveTopBar:Boolean=false;
   searchQuery:string = ''
   destroyed = new Subject<void>();
-  constructor(private responsive:BreakpointObserver,private router:Router,private dialogRef:MatDialogRef<SearchComponentComponent>){}
+  dropdownList :any = []
+  constructor(private responsive:BreakpointObserver,private router:Router,private dialogRef:MatDialogRef<SearchComponentComponent>,
+     private landing_service:LandingServiceService){}
   ngOnDestroy(): void {
     this.destroyed.next()
     this.destroyed.complete()
@@ -29,6 +32,8 @@ export class SearchComponentComponent implements OnInit,OnDestroy{
       }
     }
     )
+    this.getDropdownlist('chick')
+
 
   }
   SearchFood(){
@@ -38,5 +43,11 @@ export class SearchComponentComponent implements OnInit,OnDestroy{
 
     }
   }
-
+  getDropdownlist(search_text :string){
+    this.landing_service.getRecipesAutoComplete(search_text).subscribe({
+      next:(response :any)=>{
+        console.log(response)
+      }
+    })
+  }
 }
