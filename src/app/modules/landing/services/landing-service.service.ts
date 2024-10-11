@@ -14,17 +14,7 @@ export class LandingServiceService {
     'X-Rapidapi-Host': 'tasty.p.rapidapi.com',
   });
 
-  getRecipesAutoComplete(search_text: string): Observable<any> {
-    let apiUrl = 'https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=';
 
-    // const headers = new HttpHeaders({
-    //   'x-rapidapi-key': 'cd2d3af89dmshf0c679291c77752p1845fbjsn079977aa0cdd',
-    //   'x-rapidapi-host': 'tasty.p.rapidapi.com',
-    // });
-    // const header = this.headers
-
-    return this.http.get(apiUrl + search_text, {  headers: this.headers});
-  }
   getTypeList() {
     return this.http.get('assets/json/taglist.json');
   }
@@ -35,11 +25,11 @@ export class LandingServiceService {
       .set('tags', tags)
       console.log(params);
 
-  //  return this.http
-  //     .get('https://tasty.p.rapidapi.com/recipes/list', {
-  //       headers: this.headers,
-  //       params: params,
-  //     })
+//    return this.http
+//       .get('https://tasty.p.rapidapi.com/recipes/list', {
+//         headers: this.headers,
+//         params: params,
+//       })
   return of ({
     "count": 10107,
     "results": [

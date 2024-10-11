@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { SearchComponentComponent } from '../search-component/search-component.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -32,7 +33,9 @@ export class HomepageComponent implements OnInit, OnDestroy{
     private elementRef: ElementRef,
     private breakpointService: BreakpointresponsiveService,
     private dialog: MatDialog,
-    private landing_service:LandingServiceService
+    private landing_service:LandingServiceService,
+    private router : Router
+
 
   )
    {
@@ -177,18 +180,58 @@ export class HomepageComponent implements OnInit, OnDestroy{
       }
     })
   }
-  slideCard(direction : string){
-    let marginLeft = this.slideBody.nativeElement.style.marginLeft ? this.slideBody.nativeElement.style.marginLeft : 'calc(0%)'
-    // console.log(this.arr.length);
-    if(direction == 'l'){
-      this.slideBody.nativeElement.style.marginLeft = `calc(-102% + ${marginLeft})`
-    }
-    if(direction == 'r' && marginLeft != 'calc(0%)' ){
-      this.slideBody.nativeElement.style.marginLeft = `calc(102% + ${marginLeft})`
-    }
-    console.log( this.slideBody.nativeElement.style.marginLeft);
-  }
-  routeTorecipe(){
+  // slideCard(direction : string){
+  //   let marginLeft = this.slideBody.nativeElement.style.marginLeft ? this.slideBody.nativeElement.style.marginLeft : 'calc(0%)'
+  //   // console.log(this.arr.length);
+  //   if(direction == 'l'){
+  //     this.slideBody.nativeElement.style.marginLeft = `calc(-102% + ${marginLeft})`
+  //   }
+  //   if(direction == 'r' && marginLeft != 'calc(0%)' ){
+  //     this.slideBody.nativeElement.style.marginLeft = `calc(102% + ${marginLeft})`
+  //   }
+  //   console.log( this.slideBody.nativeElement);
+  // }
+  slideCard(direction: string) {
+    const slideContainerWidth = this.slideBody.nativeElement.offsetWidth; // The visible width of the container
+    const contentWidth = this.slideBody.nativeElement.scrollWidth; // The full width of the content (including overflow)
+    let marginLeft = this.slideBody.nativeElement.style.marginLeft
+      ? parseFloat(this.slideBody.nativeElement.style.marginLeft.replace('calc(', '').replace('%', '').replace(')', ''))
+      : 0;
 
+    const slideWidth = 102; // The width of each slide in percentage
+
+    // Calculate the maximum negative margin (content overflow)
+    const maxNegativeMargin = -((contentWidth - slideContainerWidth) / slideContainerWidth) * 100;
+
+    if (direction === 'l') {
+      // Slide left if there's more content to show
+      if (marginLeft > maxNegativeMargin) {
+        this.slideBody.nativeElement.style.marginLeft = `calc(${marginLeft - slideWidth}%)`;
+      }
+    }
+
+    if (direction === 'r') {
+      // Slide right only if we're not already at the start (i.e., marginLeft is not 0)
+      if (marginLeft < 0) {
+        this.slideBody.nativeElement.style.marginLeft = `calc(${marginLeft + slideWidth}%)`;
+      }
+    }
+
+    console.log(this.slideBody.nativeElement.style.marginLeft);
+  }
+  routeTorecipe(cardData : any){
+    console.log(cardData);
+
+    // if(this.cardData.type == 'recipe')
+    // this.router.navigate(['/recipe',{slug:this.cardData?.slug}])
+    // if (cardData.type === 'recipe') {
+      const slug = cardData?.slug;
+      if(slug)
+      this.router.navigate(['/recipe', { slug }]);
+      // this.reloadPage();
+    // }
+  }
+  advancedSearch(){
+    this.router.navigate(['/search']);
   }
 }

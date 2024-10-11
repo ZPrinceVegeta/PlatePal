@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: center;
     .searchboxhome{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 75%;
       .heading{
         font-size: 58px;
         font-family: serif;
@@ -21,7 +25,8 @@
       }
       .searchbox{
         height: 3.75rem;
-        width: 37.5rem;
+        max-width: 37.5rem;
+        width: 100%;
         background-color: rgba(255,255,255,0.75);
         display: flex;
         align-items: center;
@@ -122,11 +127,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all 0.3s;
         &.backBtn{
           left: 10px;
         }
         &.frwdBtn{
           right: 10px;
+        }
+        &:hover{
+          cursor: pointer;
+          background-color: rgba(255,255,255,0.9);
+
         }
       }
       }
@@ -198,9 +209,9 @@
 
 
 .Medium{
-  .searchbox{
-    width: 466px;
-  }
+  // .searchbox{
+  //   width: 466px;
+  // }
   .dietryContent{
     .btn-container{
       display: flex;
@@ -280,6 +291,13 @@
 //   }
 // }
 .Small{
+  .backgroundimageContainer{
+    .searchboxhome{
+      .heading{
+        // font-size: 41px;
+      }
+    }
+  }
   .dietryContent{
     .btn-container{
       display: flex;
@@ -337,6 +355,9 @@
     }
 
     .card-body{
+      .slideBtn{
+        top: 21% !important;
+      }
       .cardSection{
         .card{
             min-width: 100% !important;
@@ -346,4 +367,40 @@
     }
 
   }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -300px 0;
+  }
+
+  100% {
+    background-position: 300px 0;
+  }
+}
+
+.shimmer::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, #d9d9d9 0%, rgba(0, 0, 0, 0.07) 20%, #d9d9d9 40%, #d9d9d9 100%);
+  // background-repeat: no-repeat;
+  background-size: 700px 300px;
+  animation: shimmer 01s linear infinite;
+}
+.shimmer {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  // height: 285px;
+  border-radius: 20px;
+  width:calc(92% / 5)
+}
+
+.shimmer-text {
+  height: 24px;
+  margin: 20px 0 8px 0;
+  border-radius: 10px;
+  width: 80%;
 }

@@ -32,7 +32,6 @@ export class SearchComponentComponent implements OnInit,OnDestroy{
       }
     }
     )
-    this.getDropdownlist('chick')
 
 
   }
@@ -42,12 +41,5 @@ export class SearchComponentComponent implements OnInit,OnDestroy{
       this.router.navigate(['/search',{q:this.searchQuery}])
 
     }
-  }
-  getDropdownlist(search_text :string){
-    this.landing_service.getRecipesAutoComplete(search_text).subscribe({
-      next:(response :any)=>{
-        console.log(response)
-      }
-    })
   }
 }

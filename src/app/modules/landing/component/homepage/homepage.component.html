@@ -7,7 +7,7 @@
       <div class="searchbox" (click)="openSearch()">
         <mat-icon>search</mat-icon>
       </div>
-      <div class="advancedSearch">
+      <div class="advancedSearch" (click)="advancedSearch()">
         ADVANCED   SEARCH
       </div>
     </div>
@@ -37,16 +37,20 @@
         </svg>
       </div>
       <div class="cardSection" #slideBody>
-        <div class="card" *ngFor="let card of recipeArr ; let index = index" (click)="routeTorecipe()">
-          <!-- <div class="moreRecipeCard" (click)="routeTorecipe()"> -->
+        <ng-container *ngIf="recipeArr && recipeArr.length >0; else shimmer">
+          <div class="card" *ngFor="let card of recipeArr ; let index = index" (click)="routeTorecipe(card)">
             <div class="thumbnail">
               <img [src]="card?.thumbnail_url" alt="">
             </div>
             <p class="name">{{card?.name}}</p>
-            <!-- <p class="author">By {{card?.author}}</p> -->
-          <!-- </div> -->
+            <!--  -->
 
         </div>
+        </ng-container>
+        <ng-template #shimmer>
+          <div class="card shimmer" *ngFor="let i of [1,2,3,4,5]"></div>
+        </ng-template>
+
       </div>
     </div>
 
