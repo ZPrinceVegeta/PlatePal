@@ -294,7 +294,7 @@
   .backgroundimageContainer{
     .searchboxhome{
       .heading{
-        // font-size: 41px;
+        font-size: 40px !important;
       }
     }
   }
@@ -332,6 +332,22 @@
   }
 }
 .XSmall{
+  .backgroundimageContainer{
+    .searchboxhome{
+      .heading{
+        font-size: 40px !important;
+        margin-bottom: 0;
+      }
+      .searchbox{
+        height: 2.75rem;
+      }
+      .advancedSearch{
+        margin-top: 9px;
+        font-size: 13px;
+      }
+
+    }
+  }
   .dietryContent{
     .btn-container{
       display: flex;
