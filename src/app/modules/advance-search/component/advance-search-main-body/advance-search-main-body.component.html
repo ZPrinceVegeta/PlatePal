@@ -5,7 +5,7 @@
   <div *ngIf="recipeData" class="matching_info">
     {{recipeData?.count}} matching result for "<i>{{recipeData?.query}}</i>"
   </div>
-  <div class="cardContainer" #cardContainer>
+  <div class="cardContainer" #cardContainer (scroll)="onScroll()">
     <div class="wrapper" *ngFor="let recipe of recipeData?.results">
       <div class="recipe_card" *ngIf="recipe.response_type == 'recipe'" [class.display_expand]="recipe?.is_quick_view_opened">
         <app-card-recipe [passedData]="recipe" (switchQuickFlag)="changeQuickFlag($event)"></app-card-recipe>

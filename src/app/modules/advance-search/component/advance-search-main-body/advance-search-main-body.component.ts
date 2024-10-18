@@ -58,10 +58,21 @@ export class AdvanceSearchMainBodyComponent implements OnInit,OnDestroy{
       wrapperElements.forEach((wrapperElement : any) => {
         const openElement = wrapperElement.querySelector('.open');
         if (openElement) {
-          
+
           openElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
         }
       });
+    }
+  }
+  isLoading = false;
+  onScroll(){
+    const element = this.cardContainer.nativeElement;
+
+    // Calculate scroll position
+    const atBottom = element.scrollHeight - element.scrollTop === element.clientHeight;
+
+    if (atBottom && !this.isLoading) {
+      // this.loadNextPage(); // Call your API for the next page
     }
   }
   closeExpand(){

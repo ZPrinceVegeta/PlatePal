@@ -37,7 +37,8 @@
         </svg>
       </div>
       <div class="cardSection" #slideBody>
-        <ng-container *ngIf="recipeArr && recipeArr.length >0; else shimmer">
+        <ng-container *ngIf="!cardLoader ; else shimmer"></ng-container>
+        <ng-container *ngIf="recipeArr && recipeArr.length >0">
           <div class="card" *ngFor="let card of recipeArr ; let index = index" (click)="routeTorecipe(card)">
             <div class="thumbnail">
               <img [src]="card?.thumbnail_url" alt="">

@@ -90,7 +90,7 @@ export class AdadvSearchHeaderComponent
 
       },
     });
-    this.service.setRecipeData(0,12,this.selectedTagList,this.search_text);
+    this.service.setRecipeData(0,12,this.selectedTagList,this.search_text); // in initial call call first api with 12 recipes
 
   }
   searchRecipe(){
@@ -204,6 +204,9 @@ export class AdadvSearchHeaderComponent
   }
   closeExpandDialog() {
     this.is_expand_filter_open = false;
+  }
+  homeRoute(){
+    this.router.navigate(['/home'])
   }
 }
 // function myInputProperty(value: any, arg1: number) {

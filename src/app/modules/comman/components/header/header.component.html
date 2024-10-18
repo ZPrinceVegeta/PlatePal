@@ -45,7 +45,7 @@
           <mat-icon *ngIf="!isdeviceLandscape && !isdevicePotrait" class="favorite">favorite</mat-icon>
           <span *ngIf="!isdeviceLandscape && !isdevicePotrait" class="signInText">Sign In</span>
         </div>
-        <div class="logo childheader" [ngClass]="{'is-phone-portrait': isdevicePotrait}" >
+        <div class="logo childheader" (click)="homeRoute()" [ngClass]="{'is-phone-portrait': isdevicePotrait}" >
           <img src="../../../../../assets/images/logoplatepal.png">
         </div>
         <div class="rightSide childheader">

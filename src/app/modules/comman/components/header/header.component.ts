@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SearchComponentComponent } from '../../../landing/component/search-component/search-component.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -10,7 +11,7 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy{
-  constructor(private responsive:BreakpointObserver, private dialog:MatDialog){}
+  constructor(private responsive:BreakpointObserver, private dialog:MatDialog , private router : Router){}
   ngOnDestroy() {
     this.breakpoint1.unsubscribe()
     this.breakpoint2.unsubscribe()
@@ -46,6 +47,9 @@ export class HeaderComponent implements OnInit, OnDestroy{
   }
   openSearch(){
     this.dialog.open(SearchComponentComponent,{panelClass:"full-screen-dialog"})
+  }
+  homeRoute(){
+    this.router.navigate(['/home'])
   }
 
 }

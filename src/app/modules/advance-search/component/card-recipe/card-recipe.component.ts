@@ -68,10 +68,10 @@ export class CardRecipeComponent implements OnInit, AfterViewInit {
     if(this.passedData.response_type.toLowerCase() == 'recipe'){
       this.router.navigate(['/recipe',{slug:this.passedData?.slug}])
     }
-    else if(this.passedData.response_type.toLowerCase() == "compilation"){
+    // else if(this.passedData.response_type.toLowerCase() == "compilation"){
 
-      this.router.navigate(['/compilation',{slug:this.passedData?.slug}])
+    //   this.router.navigate(['/compilation',{slug:this.passedData?.slug}])
 
-    }
+    // }
   }
 }

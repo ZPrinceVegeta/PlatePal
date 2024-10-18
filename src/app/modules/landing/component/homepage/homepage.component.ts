@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { SearchComponentComponent } from '../search-component/search-component.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -29,6 +30,7 @@ export class HomepageComponent implements OnInit, OnDestroy{
   recipeArr :any = []
   private intervalId: any;
   currentScreenSize = '';
+  cardLoader = false
   constructor(
     private elementRef: ElementRef,
     private breakpointService: BreakpointresponsiveService,
@@ -173,10 +175,17 @@ export class HomepageComponent implements OnInit, OnDestroy{
     this.getDietryTypeRecipeList(type.name)
   }
   getDietryTypeRecipeList(type : string){
+    this.cardLoader = true;
     this.landing_service.setRecipeData(type).subscribe({
       next : (res : any) =>{
+      this.cardLoader = false;
+
         console.log('recipe response' , res);
-        this.recipeArr = res.results
+        this.recipeArr = res.results;
+        this.slideBody.nativeElement.style.marginLeft = '0px'
+      },
+      error : ( err : HttpErrorResponse) =>{
+        this.cardLoader = false;
       }
     })
   }
