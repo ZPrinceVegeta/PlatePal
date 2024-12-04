@@ -37,9 +37,10 @@ export class AdadvSearchHeaderComponent
   filterDropDownSelectedGroup: any = [];
   is_expand_filter_open: Boolean = false;
   header_height: string = 'calc(100vh - 140px)';
-  selectedTagList : string = ''
+  selectedTagList : string = '';
+  initialCount = 12
   constructor(
-    private service: AdvncSearchService,
+    private advancedSearchService: AdvncSearchService,
     private breakpointService: BreakpointresponsiveService,
     private router:Router,
     private activatedRoute: ActivatedRoute,
@@ -83,18 +84,18 @@ export class AdadvSearchHeaderComponent
     this.activatedRoute.paramMap.subscribe((p: ParamMap) => {
       this.search_text = p.get('q') || '';
     });
-    this.service.getTypeList().subscribe({
+    this.advancedSearchService.getTypeList().subscribe({
       next: (res: any) => {
         this.typleList = res;
-        console.log(this.typleList);
+        // console.log(this.typleList);
 
       },
     });
-    this.service.setRecipeData(0,12,this.selectedTagList,this.search_text); // in initial call call first api with 12 recipes
+    this.advancedSearchService.setRecipeData(0,this.initialCount,this.selectedTagList,this.search_text); // in initial call call first api with 12 recipes
 
   }
   searchRecipe(){
-
+    this.initialCount = 12
     const navigationExtras: NavigationExtras = {
       queryParams: { q: this.search_text },
       replaceUrl: true
@@ -112,8 +113,14 @@ export class AdadvSearchHeaderComponent
       }
 
     });
-    this.service.setRecipeData(0,12,this.selectedTagList,this.search_text);
+    this.advancedSearchService.setRecipeData(0,this.initialCount,this.selectedTagList,this.search_text);
 
+  }
+
+  nextPage(){
+    // this.initialCount += 12
+    this.advancedSearchService.setRecipeData(this.initialCount,this.initialCount+12,this.selectedTagList,this.search_text);
+    this.initialCount = this.initialCount + 12
   }
 
   openFilterBar() {

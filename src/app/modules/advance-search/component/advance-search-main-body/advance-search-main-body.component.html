@@ -1,19 +1,31 @@
-<div class="body {{currentScreenSize}}">
+<div class="body {{currentScreenSize}}" (scroll)="onScroll()" #body>
   <div class="header">
     <app-adadv-search-header></app-adadv-search-header>
   </div>
-  <div *ngIf="recipeData" class="matching_info">
-    {{recipeData?.count}} matching result for "<i>{{recipeData?.query}}</i>"
-  </div>
-  <div class="cardContainer" #cardContainer (scroll)="onScroll()">
-    <div class="wrapper" *ngFor="let recipe of recipeData?.results">
-      <div class="recipe_card" *ngIf="recipe.response_type == 'recipe'" [class.display_expand]="recipe?.is_quick_view_opened">
-        <app-card-recipe [passedData]="recipe" (switchQuickFlag)="changeQuickFlag($event)"></app-card-recipe>
-        <div *ngIf="recipe?.is_quick_view_opened" class="pointerTriangle"></div>
-      </div>
-      <div class="expand_card" [class.open]="recipe?.is_quick_view_opened">
-        <app-card-expand *ngIf="recipe?.is_quick_view_opened" (closeEmit)="closeExpand()"  [passedData]="recipe"></app-card-expand>
+  <ng-container *ngIf="recipeData ; else loader">
+    <div  class="matching_info">
+      {{recipeData?.count}} matching result for "<i>{{recipeData?.query}}</i>"
+    </div>
+    <div class="cardContainer" #cardContainer >
+      <div class="wrapper" *ngFor="let recipe of recipeData?.results">
+        <div class="recipe_card" *ngIf="recipe.response_type == 'recipe'" [class.display_expand]="recipe?.is_quick_view_opened">
+          <app-card-recipe [passedData]="recipe" (switchQuickFlag)="changeQuickFlag($event)"></app-card-recipe>
+          <div *ngIf="recipe?.is_quick_view_opened" class="pointerTriangle"></div>
+        </div>
+        <div class="expand_card" [class.open]="recipe?.is_quick_view_opened">
+          <app-card-expand *ngIf="recipe?.is_quick_view_opened" (closeEmit)="closeExpand()"  [passedData]="recipe"></app-card-expand>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
+  <ng-template #loader>
+    <div class="cardContainer loader">
+      <div class="wrapper" *ngFor="let loader of loaderNum">
+          <div class="loader_card">
+
+          </div>
+      </div>
+    </div>
+  </ng-template>
+
 </div>

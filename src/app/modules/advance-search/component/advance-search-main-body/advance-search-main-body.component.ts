@@ -1,9 +1,8 @@
 import { takeUntil, Subject } from 'rxjs';
 import { BreakpointresponsiveService } from './../../../comman/service/breakpointresponsive.service';
 import { AdvncSearchService } from './../../service/advnc-search.service';
-import { SearchComponentComponent } from './../../../landing/component/search-component/search-component.component';
-import { MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { AdadvSearchHeaderComponent } from '../adadv-search-header/adadv-search-header.component';
 
 @Component({
   selector: 'app-advance-search-main-body',
@@ -14,7 +13,12 @@ export class AdvanceSearchMainBodyComponent implements OnInit,OnDestroy{
   currentScreenSize:string=''
   destroyed = new Subject<void>()
   recipeData:any;
+  public loaderNum = Array(12)
   @ViewChild('cardContainer') cardContainer!: ElementRef;
+  @ViewChild('body') bodyContainer!: ElementRef;
+  @ViewChild(AdadvSearchHeaderComponent) advancedSearchHeader!: AdadvSearchHeaderComponent;
+
+
   constructor(private searchService:AdvncSearchService,private responsiveService:BreakpointresponsiveService , private renderer : Renderer2){
     // dialogRef.close()
   }
@@ -66,15 +70,22 @@ export class AdvanceSearchMainBodyComponent implements OnInit,OnDestroy{
   }
   isLoading = false;
   onScroll(){
-    const element = this.cardContainer.nativeElement;
+    const element = this.bodyContainer.nativeElement;
 
     // Calculate scroll position
     const atBottom = element.scrollHeight - element.scrollTop === element.clientHeight;
+    // console.log("next cvcall");
 
     if (atBottom && !this.isLoading) {
-      // this.loadNextPage(); // Call your API for the next page
+      this.loadNextPage(); // Call your API for the next page
+      console.log("next call");
+
     }
   }
+  loadNextPage(){
+    this.advancedSearchHeader.nextPage()
+  }
+
   closeExpand(){
     this.recipeData.results.forEach((element:any) => {
       element.is_quick_view_opened=false

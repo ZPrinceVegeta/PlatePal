@@ -6,7 +6,8 @@
 }
 .body{
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
   font-family: "Renner",sans-serif;;
   display: flex;
   flex-direction: column;
@@ -24,6 +25,7 @@
   .cardContainer{
     display: flex;
     flex-wrap: wrap;
+
     @media only screen and (min-width: 1372px) {
       width: 1372px;
     }
@@ -78,6 +80,8 @@
     justify-content: center !important;
     .wrapper{
       width: calc(50% - 130px) !important;
+
+
     }
   }
 }
@@ -90,6 +94,9 @@
     .wrapper{
       width: calc(100% - 50px) !important;
       margin-bottom: 30px;
+      .loader_card{
+        aspect-ratio: 139/36
+      }
     }
   }
 }
@@ -102,6 +109,43 @@
     .wrapper{
       width: calc(100% - 20px) !important;
       margin-bottom: 30px;
+      .loader_card{
+        aspect-ratio: 85/28 !important;
+      }
     }
+  }
+}
+.loader{
+  width: 100%;
+  margin-top: 30px;
+  .loader_card{
+    width: 100%;
+    aspect-ratio: 161/191;
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+  }
+
+
+  .loader_card::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+    background-size: 1200px 100%;
+    animation: shimmer 01s linear infinite;
+  }
+
+}
+@keyframes shimmer {
+  0% {
+    background-position: -600px 0;
+  }
+
+  100% {
+    background-position: 600px 0;
   }
 }
