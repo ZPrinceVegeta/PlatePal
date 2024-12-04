@@ -41,13 +41,13 @@ export class RecipePageDisplayComponent implements OnInit , OnDestroy {
       .subscribe({
         next: (res) => {
           this.currentScreen=res
-          this.reciepeData
+          // this.reciepeData
         },
       });
     // throw new Error('Method not implemented.');
     this.activatedRoute.paramMap.subscribe((p: ParamMap) => {
 
-      this.id = p.get('slug') || '';
+      this.id = p.get('id') || '';
       this.recipeResponse = undefined
       this.reciepeData = undefined
 
@@ -65,11 +65,11 @@ export class RecipePageDisplayComponent implements OnInit , OnDestroy {
     console.log(this.id)
     this.recipeService.getRecipeData(this.id).subscribe({
       next : (res : any)=>{
-        if(res.message === "Successful"){
+        if(res){
           this.recipeResponse = res
-          this.reciepeData = this.recipeResponse.data.recipe
+          // this.reciepeData = this.recipeResponse.data.recipe
           console.log(this.recipeResponse)
-        this.setInitialise()
+          this.setInitialise()
 
         }
         // this.reciepeData = res
@@ -90,8 +90,11 @@ export class RecipePageDisplayComponent implements OnInit , OnDestroy {
 
   }
   setInitialise(){
-    if(this.reciepeData && this.reciepeData.ratings.score){
-       this.userScore = (this.reciepeData.ratings.score * 5)/100
+    console.log("here");
+
+    if(this.recipeResponse && this.recipeResponse.user_ratings){
+       this.userScore = (this.recipeResponse.user_ratings.score * 5)
+      console.log(this.userScore);
 
       this.userScoreArray = []
       for( let i=1 ; i <= this.userScore ; i ++){
@@ -105,8 +108,9 @@ export class RecipePageDisplayComponent implements OnInit , OnDestroy {
           this.userScoreArray.push('empty')
         }
       }
+
     }
-    this.savedStatus = this.CommonHelper.checkIfRecipeIsSaved(this.reciepeData?.id)
+    // this.savedStatus = this.CommonHelper.checkIfRecipeIsSaved(this.reciepeData?.id)
 
 
   }

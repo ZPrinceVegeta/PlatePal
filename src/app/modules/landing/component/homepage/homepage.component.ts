@@ -234,9 +234,9 @@ export class HomepageComponent implements OnInit, OnDestroy{
     // if(this.cardData.type == 'recipe')
     // this.router.navigate(['/recipe',{slug:this.cardData?.slug}])
     // if (cardData.type === 'recipe') {
-      const slug = cardData?.slug;
-      if(slug)
-      this.router.navigate(['/recipe', { slug }]);
+      const id = cardData?.id;
+      if(id)
+      this.router.navigate(['/recipe', { id }]);
       // this.reloadPage();
     // }
   }

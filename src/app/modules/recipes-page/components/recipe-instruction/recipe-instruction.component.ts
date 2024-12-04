@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RecipeInstructionComponent implements OnInit {
 
 
-  @Input() recipeData : any
+  @Input() Instruction : any = []
+  @Input() Ingredients : any = []
   @Input() screenSize! : string
   isRecipeSorted = false;
   ngOnInit(): void {

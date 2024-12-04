@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,15 +8,13 @@ import { Injectable } from '@angular/core';
 export class RecipePageService {
 
   constructor(private http : HttpClient) {}
-  // getRecipeData(slug : string){
-  //   const headers = new HttpHeaders({
-  //     'X-RapidAPI-Key': 'cd2d3af89dmshf0c679291c77752p1845fbjsn079977aa0cdd',
-  //     'X-RapidAPI-Host': 'tasty-co.p.rapidapi.com',
+  // getRecipeData(id: string): Observable<any> {
+  //   let apiUrl = 'https://tasty.p.rapidapi.com/recipes/get-more-info';
+  //   let headers = new HttpHeaders({
+  //     'x-rapidapi-key': 'cd2d3af89dmshf0c679291c77752p1845fbjsn079977aa0cdd',
+  //     'x-rapidapi-host': 'tasty.p.rapidapi.com',
   //   });
-
-  //   const url = `https://tasty-co.p.rapidapi.com/recipes/detail?slug=${slug}`;
-
-  //   return this.http.get(url, { headers })
+  //   return this.http.get(`${apiUrl}?id=${id}`, { headers: headers });
   // }
   getRecipeData(slug: string){
     return this.http.get('assets/json/sampleRecipe.json')

@@ -1,16 +1,16 @@
 <!-- your-component.component.html -->
 <div class="wrapper {{currentScreen}}" #wrapper  (scroll)="onParentScroll($event)">
-  <div *ngIf="reciepeData ; else skelton"  class="recipe-top ">
+  <div *ngIf="recipeResponse ; else skelton"  class="recipe-top ">
     <div class="wrapper-left">
-      <div class="name">{{reciepeData?.name}}</div>
-      <div class="author" *ngIf="reciepeData.credits && reciepeData.credits.byline ; else anonymus">By {{reciepeData?.credits?.byline}}</div>
+      <div class="name">{{recipeResponse?.name}}</div>
+      <div class="author" *ngIf="recipeResponse.credits && recipeResponse.credits[0] && recipeResponse.credits[0].name ; else anonymus">By {{recipeResponse.credits[0].name }}</div>
       <ng-template #anonymus ><div class="author">By Anonymous</div></ng-template>
       <div class="saveRecipe">
         <div class="saveBtn" *ngIf="!savedStatus" (click)="saveRecipe(true)"><mat-icon>bookmark_border</mat-icon>Add Favorite</div>
         <div class="saveBtn" *ngIf="savedStatus" (click)="saveRecipe(false)"><mat-icon>bookmark</mat-icon>Remove Favorite</div>
 
       </div>
-      <div class="starRating" *ngIf="reciepeData.ratings && reciepeData.ratings.score">
+      <div class="starRating" *ngIf="userScoreArray && userScoreArray.length > 0">
         <ng-container *ngFor="let i of  userScoreArray , let index = index">
           <mat-icon class="star" *ngIf="i === 'full'">star</mat-icon>
           <mat-icon class="star" *ngIf="i === 'half'">star_half</mat-icon>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="wrapper-right">
-      <img class="thumbnail-img" [src]="reciepeData?.thumbnail_url" [alt]="'No Image Found'">
+      <img class="thumbnail-img" [src]="recipeResponse?.thumbnail_url" [alt]="'No Image Found'">
     </div>
   </div>
   <ng-template #skelton>
@@ -27,21 +27,20 @@
 
     </div>
   </ng-template>
-  <ng-container *ngIf="reciepeData && reciepeData?.instructions" ></ng-container>
-  <div class="recipebottom" #recipeBtm >
-    <div class="left">
-      <app-recipe-instruction [recipeData]="reciepeData" [screenSize]="currentScreen"></app-recipe-instruction>
-    </div>
-    <div class="right" *ngIf="reciepeData && reciepeData.video_url">
-      <div class="video" #videoPlayer >
-       <app-recipe-video [ngClass]="{'fixed': isFixed}"  [screenSize]="currentScreen"  [url]="reciepeData.video_url"> </app-recipe-video>
-
-
-
+  <ng-container *ngIf="recipeResponse && recipeResponse?.instructions" >
+    <div class="recipebottom" #recipeBtm >
+      <div class="left">
+        <app-recipe-instruction [Instruction]="recipeResponse.instructions" [Ingredients]="recipeResponse.sections" [screenSize]="currentScreen"></app-recipe-instruction>
+      </div>
+      <div class="right" *ngIf="recipeResponse && recipeResponse.video_url">
+        <div class="video" #videoPlayer >
+         <app-recipe-video [ngClass]="{'fixed': isFixed}"  [screenSize]="currentScreen"  [url]="reciepeData.video_url"> </app-recipe-video>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="moreRecipe" *ngIf="recipeResponse?.data.relatedRecipes && recipeResponse?.data.relatedRecipes.length > 0">
+  </ng-container>
+
+  <!-- <div class="moreRecipe" *ngIf="recipeResponse?.data.relatedRecipes && recipeResponse?.data.relatedRecipes.length > 0">
     <div class="readMore">Read More</div>
     <div class="moreRecipeWrapper">
       <ng-container *ngFor="let moreRecipe of recipeResponse?.data.relatedRecipes">
@@ -50,7 +49,7 @@
         </div>
       </ng-container>
     </div>
-  </div>
+  </div> -->
 
 </div>
 
